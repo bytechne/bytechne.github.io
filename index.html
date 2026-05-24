@@ -194,7 +194,7 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
     </a>
     <nav>
       <a href="#calendar" class="active">대회 일정</a>
-      <a href="#yearly">연간 대회</a>
+      <a href="schedule.html">연간 대회</a>
       <a href="articles.html" class="nav-article">아티클</a>
     </nav>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
@@ -281,14 +281,6 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
 
   <div class="ad-banner"><span class="ad-label">ADVERTISEMENT</span></div>
 
-  <section id="yearly">
-    <div class="section-header">
-      <h2 class="section-title">연간 대회 일람</h2>
-      <span style="font-size:11px;color:var(--text3);">매년 반복 개최</span>
-    </div>
-    <div class="yearly-grid" id="yearly-grid"></div>
-  </section>
-
   <section id="articles">
     <div class="section-header">
       <h2 class="section-title">아티클</h2>
@@ -339,16 +331,6 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
 
 <script>
 let EVENTS = [];
-
-const YEARLY=[
-  {month:2,name:"대선기 종별 오픈 검도대회",note:"고양어울림누리 · 오픈"},
-  {month:5,name:"서울특별시장기 종별 검도대회",note:"마포구민체육센터"},
-  {month:6,name:"서울컵 검도대회",note:"잠실학생체육관 · 오픈"},
-  {month:6,name:"남원 오픈 검도대회",note:"남원실내체육관"},
-  {month:8,name:"의장기 오픈 검도대회",note:"고양체육관 · 전국"},
-  {month:10,name:"가평 전국 검도 페스티벌",note:"가평군 · 제한없음"},
-  {month:11,name:"고양검도회장기 검도대회",note:"고양시청 체육관"},
-];
 
 const now=new Date();
 let curYear=now.getFullYear(), curMonth=now.getMonth();
@@ -454,17 +436,6 @@ function buildItem(e){
   </div>`;
 }
 
-function renderYearly(){
-  const MN=['','1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
-  const byM={};
-  YEARLY.forEach(e=>{if(!byM[e.month])byM[e.month]=[];byM[e.month].push(e);});
-  document.getElementById('yearly-grid').innerHTML=Object.keys(byM).sort((a,b)=>a-b).map(m=>`
-    <div class="month-block">
-      <div class="month-label">${MN[m]}</div>
-      ${byM[m].map(e=>`<div class="month-ev-item">${e.name}<div class="month-ev-note">${e.note}</div></div>`).join('')}
-    </div>`).join('');
-}
-
 function updateStats(){
   const mEvs=EVENTS.filter(e=>{const d=new Date(e.date);return d.getFullYear()===curYear&&d.getMonth()===curMonth;});
   document.getElementById('stat-month').textContent=mEvs.length;
@@ -537,9 +508,8 @@ document.getElementById('view-list').addEventListener('click',()=>{
 });
 
 initTheme();
-renderYearly();
 
-fetch('manual_events.json')
+fetch('manual_events.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     EVENTS = data.events || [];

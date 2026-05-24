@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전체 대회 일정 — 검도나우</title>
+<meta name="description" content="2026년 국내 검도 대회 전체 일정 리스트.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#ffffff; --bg2:#f8f8f8; --bg3:#f2f2f2;
+  --text:#111111; --text2:#444444; --text3:#888888;
+  --border:#111111; --border2:#dddddd; --border3:#ebebeb;
+  --red:#c0392b; --ev-hover:#f5f5f5;
+  --tag-bg:#111111; --tag-text:#ffffff;
+}
+[data-theme="dark"] {
+  --bg:#111111; --bg2:#0d0d0d; --bg3:#1a1a1a;
+  --text:#ffffff; --text2:#dddddd; --text3:#aaaaaa;
+  --border:#2a2a2a; --border2:#2a2a2a; --border3:#1e1e1e;
+  --red:#c0392b; --ev-hover:#1a1a1a;
+  --tag-bg:#e8b86d; --tag-text:#111111;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Noto Sans KR',sans-serif; font-weight:400; transition:background 0.25s,color 0.25s; }
+
+header { position:sticky; top:0; z-index:100; background:var(--bg2); border-bottom:3px solid var(--border); transition:background 0.25s,border-color 0.25s; }
+[data-theme="dark"] header { border-bottom-width:1px; }
+.header-inner { max-width:1160px; margin:0 auto; padding:0 24px; height:60px; display:flex; align-items:center; justify-content:space-between; }
+.logo { text-decoration:none; }
+.logo-main { font-size:17px; font-weight:800; color:var(--text); letter-spacing:-0.01em; }
+.logo-main em { color:var(--red); font-style:normal; }
+nav { display:flex; align-items:center; gap:28px; }
+nav a { text-decoration:none; font-size:16px; font-weight:600; color:var(--text3); transition:color 0.15s; }
+nav a:hover { color:var(--text); }
+nav a.active { color:var(--text); font-weight:700; border-bottom:2px solid var(--red); padding-bottom:2px; }
+nav a.nav-article { color:#b8963e; }
+nav a.nav-article:hover { color:#d4a84b; }
+
+.theme-toggle { display:flex; align-items:center; gap:8px; cursor:pointer; padding:6px 12px; border:1.5px solid var(--border2); border-radius:20px; background:var(--bg3); font-size:12px; font-weight:600; color:var(--text2); white-space:nowrap; }
+.toggle-track { width:32px; height:18px; background:var(--border2); border-radius:9px; position:relative; transition:background 0.25s; }
+[data-theme="dark"] .toggle-track { background:var(--red); }
+.toggle-thumb { position:absolute; top:2px; left:2px; width:14px; height:14px; background:#fff; border-radius:50%; transition:transform 0.25s; box-shadow:0 1px 3px rgba(0,0,0,0.3); }
+[data-theme="dark"] .toggle-thumb { transform:translateX(14px); }
+
+main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
+
+.page-hero { padding:40px 0 24px; border-bottom:2px solid var(--border); display:flex; align-items:flex-end; justify-content:space-between; }
+[data-theme="dark"] .page-hero { border-bottom-width:1px; }
+.page-title { font-family:'Noto Serif KR',serif; font-size:clamp(28px,4vw,48px); font-weight:700; color:var(--text); }
+.page-sub { font-size:13px; color:var(--text3); margin-top:6px; }
+.event-total { font-family:'Bebas Neue',sans-serif; font-size:40px; color:var(--text3); line-height:1; }
+
+/* 필터 */
+.filter-row { display:flex; gap:6px; margin:20px 0 0; padding-bottom:20px; border-bottom:2px solid var(--border); transition:border-color 0.25s; }
+[data-theme="dark"] .filter-row { border-bottom-width:1px; }
+.filter-btn { font-size:11px; padding:4px 14px; border-radius:20px; border:1.5px solid var(--border2); background:transparent; color:var(--text3); cursor:pointer; font-weight:600; font-family:'Noto Sans KR',sans-serif; transition:all 0.15s; }
+.filter-btn:hover { border-color:var(--text3); color:var(--text2); }
+.filter-btn.active { background:var(--border); border-color:var(--border); color:#fff; }
+[data-theme="dark"] .filter-btn.active { background:var(--red); border-color:var(--red); }
+
+/* 월별 섹션 */
+.month-section { margin-top:32px; }
+
+.month-header { display:flex; align-items:baseline; gap:12px; padding-bottom:10px; border-bottom:2px solid var(--border); margin-bottom:0; transition:border-color 0.25s; }
+[data-theme="dark"] .month-header { border-bottom-width:1px; }
+.month-num { font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--red); line-height:1; }
+.month-name { font-size:14px; font-weight:700; color:var(--text3); }
+.month-count { font-size:12px; color:var(--text3); margin-left:auto; }
+
+/* 이벤트 아이템 */
+.event-list { border:1.5px solid var(--border2); border-radius:4px; overflow:hidden; margin-top:12px; transition:border-color 0.25s; }
+.event-item { display:grid; grid-template-columns:68px 1fr auto; align-items:center; border-bottom:1px solid var(--border3); color:inherit; transition:background 0.1s; cursor:pointer; }
+.event-item:last-child { border-bottom:none; }
+.event-item:hover { background:var(--ev-hover); }
+
+.event-date-col { padding:14px 0 14px 16px; border-right:2px solid var(--border); text-align:center; transition:border-color 0.25s; }
+[data-theme="dark"] .event-date-col { border-right-width:1px; }
+.ev-month { font-size:10px; color:var(--text3); }
+.ev-day { font-size:24px; font-weight:800; color:var(--text); line-height:1; }
+.ev-dow { font-size:10px; color:var(--text3); }
+
+.event-body { padding:14px 16px; }
+.event-name { font-size:14px; font-weight:700; color:var(--text); }
+.event-meta { font-size:12px; color:var(--text3); margin-top:3px; display:flex; gap:12px; }
+
+.event-tag-wrap { padding:0 16px; display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
+.ev-tag { font-size:10px; padding:2px 9px; border-radius:2px; font-weight:700; white-space:nowrap; background:var(--tag-bg); color:var(--tag-text); }
+.ev-tag.생체 { background:var(--tag-bg); color:var(--tag-text); }
+.ev-tag.학생 { background:#27ae60; color:#fff; }
+.ev-tag.실업 { background:#2a6aba; color:#fff; }
+.ev-tag.official { background:#888; color:#fff; }
+.ev-tag.오픈 { background:transparent; color:var(--red); border:1.5px solid var(--red); }
+
+.empty-msg { text-align:center; padding:60px 24px; color:var(--text3); font-size:14px; }
+.loading { text-align:center; padding:60px; color:var(--text3); font-size:14px; }
+
+/* 모달 */
+.modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:1000; align-items:center; justify-content:center; }
+.modal-overlay.open { display:flex; }
+.modal { background:var(--bg); border:2px solid var(--border); border-radius:4px; padding:28px; max-width:460px; width:90%; }
+[data-theme="dark"] .modal { border-width:1px; }
+.modal-tag { font-size:10px; font-weight:700; letter-spacing:0.1em; color:var(--red); margin-bottom:8px; }
+.modal-title { font-size:18px; font-weight:800; color:var(--text); margin-bottom:20px; line-height:1.4; }
+.modal-info { display:flex; flex-direction:column; gap:8px; margin-bottom:24px; border-top:1px solid var(--border2); padding-top:16px; }
+.modal-row { display:flex; gap:16px; font-size:13px; }
+.modal-lbl { color:var(--text3); min-width:44px; flex-shrink:0; }
+.modal-val { color:var(--text2); }
+.modal-actions { display:flex; gap:8px; }
+.btn-primary { flex:1; padding:10px; background:var(--text); border:none; border-radius:3px; color:var(--bg); font-size:13px; font-weight:700; cursor:pointer; font-family:'Noto Sans KR',sans-serif; transition:opacity 0.15s; }
+.btn-primary:hover { opacity:0.85; }
+.btn-secondary { padding:10px 16px; background:transparent; border:1.5px solid var(--border2); border-radius:3px; color:var(--text3); font-size:13px; font-weight:600; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+.btn-secondary:hover { border-color:var(--text3); color:var(--text); }
+
+footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; transition:border-color 0.25s; }
+[data-theme="dark"] footer { border-top-width:1px; }
+.footer-logo { font-size:15px; font-weight:800; color:var(--text3); }
+.footer-text { font-size:11px; color:var(--text3); text-align:right; line-height:1.8; }
+
+@media(max-width:768px) {
+  nav a:not(.active) { display:none; }
+  .event-item { grid-template-columns:60px 1fr; }
+  .event-tag-wrap { display:none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-main">검도나우</span>
+    </a>
+    <nav>
+      <a href="index.html#calendar">대회 일정</a>
+      <a href="schedule.html" class="active">연간 대회</a>
+      <a href="articles.html" class="nav-article">아티클</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
+      <span id="theme-label">🌙 다크</span>
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div>
+      <h1 class="page-title">전체 대회 일정</h1>
+      <p class="page-sub">등록된 국내 검도 대회 전체 리스트</p>
+    </div>
+    <span class="event-total" id="event-total"></span>
+  </div>
+
+  <div class="filter-row">
+    <button class="filter-btn active" data-filter="전체">전체</button>
+    <button class="filter-btn" data-filter="실업">실업</button>
+    <button class="filter-btn" data-filter="생체">생체</button>
+    <button class="filter-btn" data-filter="학생">학생</button>
+    <button class="filter-btn" data-filter="official">대검회</button>
+  </div>
+
+  <div id="schedule-wrap">
+    <div class="loading">불러오는 중...</div>
+  </div>
+</main>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-tag" id="modal-tag"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-info" id="modal-info"></div>
+    <div class="modal-actions">
+      <button class="btn-primary" id="modal-link">공식 공고 보러가기 →</button>
+      <button class="btn-secondary" onclick="closeModal()">닫기</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Kendo Now</div>
+  <div class="footer-text">
+    대회 정보는 각 협회 공식 사이트에서 수집됩니다.<br>
+    오류 제보 및 문의: bytechne39@gmail.com
+  </div>
+</footer>
+
+<script>
+let EVENTS = [];
+let curFilter = '전체';
+const DAYS = ['일','월','화','수','목','금','토'];
+const MONTHS = ['','1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+
+function initTheme() {
+  const saved = localStorage.getItem('kendo-theme') || 'light';
+  applyTheme(saved);
+}
+function toggleTheme() {
+  applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+}
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('kendo-theme', t);
+  document.getElementById('theme-label').textContent = t === 'light' ? '🌙 다크' : '☀️ 라이트';
+}
+
+function getFiltered() {
+  if (curFilter === '전체') return EVENTS.filter(e => e.date);
+  return EVENTS.filter(e => e.date && e.type === curFilter);
+}
+
+function render() {
+  const filtered = getFiltered().sort((a,b) => a.date.localeCompare(b.date));
+  document.getElementById('event-total').textContent = filtered.length;
+
+  const wrap = document.getElementById('schedule-wrap');
+  if (!filtered.length) {
+    wrap.innerHTML = '<div class="empty-msg">등록된 대회가 없습니다.</div>';
+    return;
+  }
+
+  // 월별 그룹핑
+  const byMonth = {};
+  filtered.forEach(e => {
+    const m = parseInt(e.date.split('-')[1]);
+    if (!byMonth[m]) byMonth[m] = [];
+    byMonth[m].push(e);
+  });
+
+  wrap.innerHTML = Object.keys(byMonth).sort((a,b) => a-b).map(m => {
+    const events = byMonth[m];
+    return `
+      <div class="month-section">
+        <div class="month-header">
+          <span class="month-num">${String(m).padStart(2,'0')}</span>
+          <span class="month-name">${MONTHS[m]}</span>
+          <span class="month-count">${events.length}개 대회</span>
+        </div>
+        <div class="event-list">
+          ${events.map(e => buildItem(e)).join('')}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function buildItem(e) {
+  const d = new Date(e.date);
+  const en = new Date(e.endDate || e.date);
+  const dow = DAYS[d.getDay()];
+  const multi = e.date !== e.endDate ? ` ~ ${en.getMonth()+1}/${en.getDate()}` : '';
+  const openTag = e.open ? `<span class="ev-tag 오픈">오픈</span>` : '';
+  const typeLabel = e.type === 'official' ? '대검회' : e.type;
+  return `<div class="event-item" onclick="openModal('${e.id}')">
+    <div class="event-date-col">
+      <div class="ev-month">${d.getMonth()+1}월</div>
+      <div class="ev-day">${String(d.getDate()).padStart(2,'0')}</div>
+      <div class="ev-dow">${dow}</div>
+    </div>
+    <div class="event-body">
+      <div class="event-name">${e.name}</div>
+      <div class="event-meta">
+        ${e.location ? `<span>📍 ${e.location}</span>` : ''}
+        ${multi ? `<span>${multi}</span>` : ''}
+      </div>
+    </div>
+    <div class="event-tag-wrap">
+      <span class="ev-tag ${e.type}">${typeLabel}</span>
+      ${openTag}
+    </div>
+  </div>`;
+}
+
+function openModal(id) {
+  const e = EVENTS.find(x => x.id === id);
+  if (!e) return;
+  let dateStr = '미정';
+  if (e.date) {
+    const s = new Date(e.date), en = new Date(e.endDate || e.date);
+    dateStr = e.date === e.endDate
+      ? `${s.getFullYear()}.${s.getMonth()+1}.${s.getDate()} (${DAYS[s.getDay()]})`
+      : `${s.getFullYear()}.${s.getMonth()+1}.${s.getDate()} ~ ${en.getMonth()+1}.${en.getDate()}`;
+  }
+  const typeLabel = e.type === 'official' ? '대검회 공식' : e.type;
+  document.getElementById('modal-tag').textContent = typeLabel + (e.open ? ' · 오픈대회' : '');
+  document.getElementById('modal-title').textContent = e.name;
+  document.getElementById('modal-info').innerHTML = `
+    <div class="modal-row"><span class="modal-lbl">일시</span><span class="modal-val">${dateStr}</span></div>
+    <div class="modal-row"><span class="modal-lbl">장소</span><span class="modal-val">${e.location || '미정'}</span></div>
+    <div class="modal-row"><span class="modal-lbl">구분</span><span class="modal-val">${typeLabel}</span></div>
+    ${e.note ? `<div class="modal-row"><span class="modal-lbl">비고</span><span class="modal-val">${e.note}</span></div>` : ''}
+  `;
+  document.getElementById('modal-link').onclick = () => window.open(e.source, '_blank');
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal(ev) {
+  if (!ev || ev.target === document.getElementById('modal-overlay'))
+    document.getElementById('modal-overlay').classList.remove('open');
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    curFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+initTheme();
+
+fetch('manual_events.json?v=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    EVENTS = data.events || [];
+    render();
+  })
+  .catch(() => {
+    document.getElementById('schedule-wrap').innerHTML = '<div class="empty-msg">데이터를 불러올 수 없습니다.</div>';
+  });
+</script>
+</body>
+</html>
