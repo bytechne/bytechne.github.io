@@ -35,8 +35,6 @@ nav { display:flex; align-items:center; gap:28px; }
 nav a, nav a:visited { text-decoration:none; font-size:16px; font-weight:600; color:var(--text3); transition:color 0.15s; }
 nav a:hover { color:var(--text); }
 nav a.active, nav a.active:visited { color:var(--text); font-weight:700; border-bottom:2px solid var(--red); padding-bottom:2px; }
-nav a.nav-article, nav a.nav-article:visited { color:#b8963e; }
-nav a.nav-article:hover { color:#d4a84b; }
 
 .theme-toggle { display:flex; align-items:center; gap:8px; cursor:pointer; padding:6px 12px; border:1.5px solid var(--border2); border-radius:20px; background:var(--bg3); font-size:12px; font-weight:600; color:var(--text2); white-space:nowrap; }
 .toggle-track { width:32px; height:18px; background:var(--border2); border-radius:9px; position:relative; transition:background 0.25s; }
@@ -135,7 +133,7 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
     <nav>
       <a href="index.html#calendar">대회 일정</a>
       <a href="schedule.html" class="active">연간 대회</a>
-      <a href="articles.html" class="nav-article">아티클</a>
+      <a href="articles.html">아티클</a>
     </nav>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
       <span id="theme-label">🌙 다크</span>
