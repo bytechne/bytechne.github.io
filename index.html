@@ -536,17 +536,23 @@ document.getElementById('view-list').addEventListener('click',()=>{
 initTheme();
 renderYearly();
 
-// events.json 불러오기
-fetch('events.json')
-  .then(r => r.json())
-  .then(data => {
-    EVENTS = data.events || [];
-    renderCalendar();
-  })
-  .catch(() => {
-    // fetch 실패 시 빈 상태로 렌더
-    renderCalendar();
-  });
+// events.json 불러오기 (sessionStorage 캐시 활용)
+const cached = sessionStorage.getItem('kendonow-events');
+if (cached) {
+  EVENTS = JSON.parse(cached);
+  renderCalendar();
+} else {
+  fetch('events.json')
+    .then(r => r.json())
+    .then(data => {
+      EVENTS = data.events || [];
+      sessionStorage.setItem('kendonow-events', JSON.stringify(EVENTS));
+      renderCalendar();
+    })
+    .catch(() => {
+      renderCalendar();
+    });
+}
 </script>
 </body>
 </html>
