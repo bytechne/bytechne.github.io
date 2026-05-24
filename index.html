@@ -38,11 +38,11 @@ header { position:sticky; top:0; z-index:100; background:var(--bg2); border-bott
 .logo-main { font-size:17px; font-weight:800; color:var(--text); letter-spacing:-0.01em; }
 .logo-main em { color:var(--red); font-style:normal; }
 nav { display:flex; align-items:center; gap:28px; }
-nav a { text-decoration:none; font-size:16px; font-weight:600; color:var(--text3); transition:color 0.15s; }
+nav a, nav a:visited { text-decoration:none; font-size:16px; font-weight:600; color:var(--text3); transition:color 0.15s; }
 nav a:hover { color:var(--text); }
-nav a.nav-article { color:#b8963e; }
+nav a.nav-article, nav a.nav-article:visited { color:#b8963e; }
 nav a.nav-article:hover { color:#d4a84b; }
-nav a.active { color:var(--text); font-weight:700; border-bottom:2px solid var(--red); padding-bottom:2px; }
+nav a.active, nav a.active:visited { color:var(--text); font-weight:700; border-bottom:2px solid var(--red); padding-bottom:2px; }
 
 .theme-toggle { display:flex; align-items:center; gap:8px; cursor:pointer; padding:6px 12px; border:1.5px solid var(--border2); border-radius:20px; background:var(--bg3); font-size:12px; font-weight:600; color:var(--text2); white-space:nowrap; transition:all 0.2s; }
 .toggle-track { width:32px; height:18px; background:var(--border2); border-radius:9px; position:relative; transition:background 0.25s; }
@@ -89,7 +89,7 @@ main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
 [data-theme="light"] .cal-day-name:last-child { color:#5588cc; }
 [data-theme="dark"] .cal-day-name:last-child { color:#6699dd; }
 .cal-dates { display:grid; grid-template-columns:repeat(7,1fr); }
-.cal-cell { min-height:52px; display:flex; flex-direction:column; align-items:center; padding:7px 4px 4px; border-right:0.5px solid var(--border3); border-bottom:0.5px solid var(--border3); cursor:default; transition:background 0.1s; }
+.cal-cell { min-height:72px; display:flex; flex-direction:column; align-items:center; padding:7px 3px 4px; border-right:0.5px solid var(--border3); border-bottom:0.5px solid var(--border3); cursor:default; transition:background 0.1s; }
 .cal-cell:nth-child(7n) { border-right:none; }
 .cal-cell.has-event { cursor:pointer; }
 .cal-cell.has-event:hover { background:var(--ev-hover); }
@@ -99,10 +99,10 @@ main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
 [data-theme="light"] .cal-cell.saturday .cal-date-num { color:#5588cc; }
 [data-theme="dark"] .cal-cell.saturday .cal-date-num { color:#6699dd; }
 .cal-cell.today .cal-date-num { background:var(--red); color:#fff; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; }
-.event-dot { width:6px; height:6px; border-radius:50%; margin-top:3px; background:#888888; }
-.event-dot.생체 { background:var(--red); }
-.event-dot.실업 { background:#4a90d9; }
-.event-dot.학생 { background:#27ae60; }
+.event-label { width:100%; font-size:9px; padding:1px 4px; border-radius:2px; margin-top:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block; background:#888; color:#fff; box-sizing:border-box; }
+.event-label.생체 { background:var(--red); }
+.event-label.실업 { background:#4a90d9; }
+.event-label.학생 { background:#27ae60; }
 
 .event-list { margin-top:12px; border:1.5px solid var(--border2); border-radius:4px; overflow:hidden; transition:border-color 0.25s; }
 .event-item { display:grid; grid-template-columns:68px 1fr auto; align-items:center; border-bottom:1px solid var(--border3); text-decoration:none; color:inherit; transition:background 0.1s; cursor:pointer; }
@@ -382,9 +382,9 @@ function renderCalendar(){
     if(dow===6)cls+=' saturday';
     if(isToday)cls+=' today';
     if(dayEvs.length)cls+=' has-event';
-    const dots=dayEvs.map(e=>`<div class="event-dot ${e.type}"></div>`).join('');
+    const labels=dayEvs.map(e=>`<span class="event-label ${e.type}">${e.name}</span>`).join('');
     const oc=dayEvs.length?`onclick="openModal('${dayEvs[0].id}')"`:'' ;
-    html+=`<div class="${cls}" ${oc}><span class="cal-date-num">${d}</span>${dots}</div>`;
+    html+=`<div class="${cls}" ${oc}><span class="cal-date-num">${d}</span>${labels}</div>`;
   }
   const total=firstDay+lastDate;
   const rem=total%7===0?0:7-(total%7);
