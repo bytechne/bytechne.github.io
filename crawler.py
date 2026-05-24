@@ -181,13 +181,24 @@ def parse_gnuboard(site):
         if date_td:
             start, end = extract_date_numeric(date_td.get_text())
 
-        # 제목에서 날짜 시도 (괄호 안 날짜 패턴: "(26.06.13-14)" 등)
+        # 제목에서 날짜 시도
         if not start:
             start, end = extract_date_numeric(title)
         if not start:
             start, end = extract_date_korean(title)
 
-        # 날짜 없어도 일단 포함 (나중에 수동 보완)
+        # 날짜 못 찾으면 게시글 본문 직접 방문해서 추출
+        if not start and link:
+            time.sleep(1)
+            post_soup = fetch(link)
+            if post_soup:
+                body = post_soup.select_one("#bo_v_con, .bo_v_con, .view_content, #content")
+                if body:
+                    body_text = body.get_text(" ", strip=True)
+                    start, end = extract_date_korean(body_text)
+                    if not start:
+                        start, end = extract_date_numeric(body_text)
+
         results.append(make_event(title, start, end, link, site["id"]))
 
     return results
