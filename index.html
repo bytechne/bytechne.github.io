@@ -338,15 +338,7 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
 </footer>
 
 <script>
-const EVENTS = [
-  {id:1,name:"서울특별시장기 종별 검도대회",date:"2026-05-17",endDate:"2026-05-17",location:"마포구민체육센터",type:"생체",open:true,source:"http://www.seoulkumdo.org/bbs/board.php?bo_table=notice&shsubid=753",note:""},
-  {id:2,name:"제55회 전국소년체육대회 (검도)",date:"2026-05-23",endDate:"2026-05-25",location:"미정",type:"학생",open:false,source:"https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide",note:"학생 선수 대상"},
-  {id:3,name:"남원 오픈 검도대회",date:"2026-06-12",endDate:"2026-06-14",location:"남원실내체육관",type:"생체",open:true,source:"http://www.nwkumdo.org/dmboard/list.php?board=notice",note:"조병용선생추모 검도대회 병행"},
-  {id:4,name:"서울컵 검도대회",date:"2026-06-20",endDate:"2026-06-21",location:"잠실학생체육관",type:"생체",open:true,source:"http://www.seoulkumdo.org/bbs/board.php?bo_table=notice&shsubid=753",note:""},
-  {id:5,name:"의장기 오픈 검도대회",date:"2026-08-15",endDate:"2026-08-16",location:"고양체육관",type:"생체",open:true,source:"http://www.k-kumdo.org/bbs/board.php?bo_table=notice",note:"전국 도장 및 동아리 참가 가능"},
-  {id:6,name:"가평 전국 검도 페스티벌",date:"2026-10-10",endDate:"2026-10-11",location:"가평군",type:"생체",open:true,source:"http://www.gpkumdo.com/dmboard/list.php?board=notice",note:"출전 제한 없음"},
-  {id:7,name:"고양검도회장기 검도대회",date:"2026-11-07",endDate:"2026-11-08",location:"고양시청 체육관",type:"생체",open:false,source:"http://www.k-kumdo.org/bbs/board.php?bo_table=notice",note:"고양시 내 도장 관원만 참가"}
-];
+let EVENTS = [];
 
 const YEARLY=[
   {month:2,name:"대선기 종별 오픈 검도대회",note:"고양어울림누리 · 오픈"},
@@ -542,8 +534,19 @@ document.getElementById('view-list').addEventListener('click',()=>{
 });
 
 initTheme();
-renderCalendar();
 renderYearly();
+
+// events.json 불러오기
+fetch('events.json')
+  .then(r => r.json())
+  .then(data => {
+    EVENTS = data.events || [];
+    renderCalendar();
+  })
+  .catch(() => {
+    // fetch 실패 시 빈 상태로 렌더
+    renderCalendar();
+  });
 </script>
 </body>
 </html>
