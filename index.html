@@ -87,20 +87,25 @@ main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
 [data-theme="light"] .cal-day-name:last-child { color:#5588cc; }
 [data-theme="dark"] .cal-day-name:last-child { color:#6699dd; }
 .cal-dates { display:grid; grid-template-columns:repeat(7,1fr); }
-.cal-cell { min-height:72px; display:flex; flex-direction:column; align-items:center; padding:7px 3px 4px; border-right:0.5px solid var(--border3); border-bottom:0.5px solid var(--border3); cursor:default; transition:background 0.1s; }
+.cal-cell { min-height:72px; display:flex; flex-direction:column; align-items:stretch; padding:7px 3px 4px; border-right:0.5px solid var(--border3); border-bottom:0.5px solid var(--border3); cursor:default; transition:background 0.1s; overflow:hidden; }
 .cal-cell:nth-child(7n) { border-right:none; }
 .cal-cell.has-event { cursor:pointer; }
 .cal-cell.has-event:hover { background:var(--ev-hover); }
-.cal-date-num { font-size:12px; font-weight:500; color:var(--cal-other); line-height:1; }
+.cal-date-num { font-size:12px; font-weight:500; color:var(--cal-other); line-height:1; text-align:center; }
 .cal-cell.cur-month .cal-date-num { color:var(--cal-cur); }
 .cal-cell.sunday .cal-date-num { color:#c0605a; }
 [data-theme="light"] .cal-cell.saturday .cal-date-num { color:#5588cc; }
 [data-theme="dark"] .cal-cell.saturday .cal-date-num { color:#6699dd; }
-.cal-cell.today .cal-date-num { background:var(--red); color:#fff; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; }
-.event-label { width:100%; font-size:9px; padding:1px 4px; border-radius:2px; margin-top:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block; background:#888; color:#fff; box-sizing:border-box; }
-.event-label.생체 { background:var(--red); }
-.event-label.실업 { background:#4a90d9; }
-.event-label.학생 { background:#27ae60; }
+.cal-cell.today .cal-date-num { background:var(--red); color:#fff; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; align-self:center; }
+.event-label { font-size:10px; padding:2px 4px; border-radius:2px; margin-top:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block; min-width:0; font-weight:600; }
+.event-label         { background:#f1f5f9; color:#475569; }
+.event-label.생체    { background:#fee2e2; color:#b91c1c; }
+.event-label.실업    { background:#dbeafe; color:#1d4ed8; }
+.event-label.학생    { background:#dcfce7; color:#15803d; }
+[data-theme="dark"] .event-label         { background:#334155; color:#cbd5e1; }
+[data-theme="dark"] .event-label.생체    { background:#7f1d1d; color:#fca5a5; }
+[data-theme="dark"] .event-label.실업    { background:#1e3a5f; color:#93c5fd; }
+[data-theme="dark"] .event-label.학생    { background:#14532d; color:#86efac; }
 
 .event-list { margin-top:12px; border:1.5px solid var(--border2); border-radius:4px; overflow:hidden; transition:border-color 0.25s; }
 .event-item { display:grid; grid-template-columns:68px 1fr auto; align-items:center; border-bottom:1px solid var(--border3); text-decoration:none; color:inherit; transition:background 0.1s; cursor:pointer; }
@@ -380,7 +385,8 @@ function renderCalendar(){
     if(dow===6)cls+=' saturday';
     if(isToday)cls+=' today';
     if(dayEvs.length)cls+=' has-event';
-    const labels=dayEvs.map(e=>`<span class="event-label ${e.type}">${e.name}</span>`).join('');
+    const clip=s=>s.length>9?s.slice(0,9)+'…':s;
+    const labels=dayEvs.map(e=>`<span class="event-label ${e.type}">${clip(e.name)}</span>`).join('');
     const oc=dayEvs.length?`onclick="openModal('${dayEvs[0].id}')"`:'' ;
     html+=`<div class="${cls}" ${oc}><span class="cal-date-num">${d}</span>${labels}</div>`;
   }
