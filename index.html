@@ -400,7 +400,7 @@ function renderCalendar(){
     if(isToday)cls+=' today';
     if(dayEvs.length)cls+=' has-event';
     const dots=dayEvs.map(e=>`<div class="event-dot ${e.type}"></div>`).join('');
-    const oc=dayEvs.length?`onclick="openModal(${dayEvs[0].id})"`:'' ;
+    const oc=dayEvs.length?`onclick="openModal('${dayEvs[0].id}')"`:'' ;
     html+=`<div class="${cls}" ${oc}><span class="cal-date-num">${d}</span>${dots}</div>`;
   }
   const total=firstDay+lastDate;
@@ -438,7 +438,7 @@ function buildItem(e){
   const dow=DAYS[d.getDay()];
   const multi=e.date!==e.endDate?` ~ ${en.getMonth()+1}/${en.getDate()}`:'';
   const openTag=e.open?`<span class="ev-tag 오픈">오픈</span>`:'';
-  return `<div class="event-item" onclick="openModal(${e.id})">
+  return `<div class="event-item" onclick="openModal('${e.id}')">
     <div class="event-date-col">
       <div class="ev-month">${d.getMonth()+1}월</div>
       <div class="ev-day">${String(d.getDate()).padStart(2,'0')}</div>
@@ -536,24 +536,14 @@ document.getElementById('view-list').addEventListener('click',()=>{
 initTheme();
 renderYearly();
 
-// events.json 불러오기
-// updated 타임스탬프가 바뀌면 캐시 무효화
 fetch('events.json')
   .then(r => r.json())
   .then(data => {
-    const cachedTime = sessionStorage.getItem('kendonow-updated');
-    if (cachedTime !== data.updated) {
-      // 새 데이터 → 캐시 갱신
-      sessionStorage.setItem('kendonow-updated', data.updated);
-      sessionStorage.setItem('kendonow-events', JSON.stringify(data.events || []));
-    }
-    EVENTS = JSON.parse(sessionStorage.getItem('kendonow-events') || '[]');
+    EVENTS = data.events || [];
     renderCalendar();
   })
-  .catch(() => {
-    // fetch 실패 시 캐시라도 사용
-    const cached = sessionStorage.getItem('kendonow-events');
-    EVENTS = cached ? JSON.parse(cached) : [];
+  .catch(err => {
+    console.error('events.json 로드 실패:', err);
     renderCalendar();
   });
 </script>
