@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-24 02:30",
+  "updated": "2026-05-24 02:46",
   "count": 40,
   "events": [
     {
@@ -129,6 +129,19 @@
       "open": false,
       "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1885&shsubid=&page=1&year=&month=&sca=대회",
       "source_site": "kumdo_org",
+      "note": "",
+      "updated": "2026-05-24"
+    },
+    {
+      "id": "54b09a01bd",
+      "name": "제68회 서울특별시장기 종별 검도대회 일정 및 대진표 안내",
+      "date": "2026-05-04",
+      "endDate": "2026-05-04",
+      "location": "",
+      "type": "",
+      "open": false,
+      "source": "http://www.seoulkumdo.org/bbs/board.php?bo_table=notice&wr_id=15306&shsubid=753&page=1",
+      "source_site": "seoulkumdo",
       "note": "",
       "updated": "2026-05-24"
     },
@@ -479,19 +492,6 @@
       "type": "",
       "open": false,
       "source": "http://www.seoulkumdo.org/bbs/board.php?bo_table=notice&wr_id=15333&shsubid=753&page=1",
-      "source_site": "seoulkumdo",
-      "note": "",
-      "updated": "2026-05-24"
-    },
-    {
-      "id": "2622fa79cc",
-      "name": "제68회 서울특별시장기 종별 검도대회 일정 및 대진표 안내",
-      "date": "",
-      "endDate": "",
-      "location": "",
-      "type": "",
-      "open": false,
-      "source": "http://www.seoulkumdo.org/bbs/board.php?bo_table=notice&wr_id=15306&shsubid=753&page=1",
       "source_site": "seoulkumdo",
       "note": "",
       "updated": "2026-05-24"
