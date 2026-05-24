@@ -1,0 +1,90 @@
+[
+  {
+    "id": "kumdo_org",
+    "name": "대한검도회",
+    "url": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&sca=%EB%8C%80%ED%9A%8C",
+    "type": "gnuboard",
+    "active": true,
+    "note": "대검회 공식 대회사이트. 실업선수 대회 및 초등학생 대회 위주."
+  },
+  {
+    "id": "kbkumdo",
+    "name": "경상북도검도회",
+    "url": "http://www.kbkumdo.org/plan/",
+    "type": "custom",
+    "active": true,
+    "note": "일부 전국 대회와 기타 일정 포함."
+  },
+  {
+    "id": "gnkumdo",
+    "name": "경상남도검도회",
+    "url": "http://www.gnkumdo.org/bbs/board.php?bo_table=free",
+    "type": "gnuboard",
+    "active": true,
+    "note": "일부 전국 대회와 기타 일정 포함."
+  },
+  {
+    "id": "seoulkumdo",
+    "name": "서울시검도회",
+    "url": "http://www.seoulkumdo.org/bbs/board.php?bo_table=notice&shsubid=753",
+    "type": "gnuboard",
+    "active": true,
+    "note": "서울컵 등 다양한 대회 공고."
+  },
+  {
+    "id": "gwsports",
+    "name": "강원도체육회",
+    "url": "https://www.gwsports.or.kr/Home/H20000/H20100/boardList",
+    "type": "custom",
+    "active": true,
+    "note": "다양한 종목 혼합. 월단위 캘린더식. 검도 키워드 필터 필요."
+  },
+  {
+    "id": "snsports",
+    "name": "성남시체육회",
+    "url": "https://snsports.or.kr/php/board.php?board=schedule",
+    "type": "custom",
+    "active": false,
+    "note": "캘린더식. 검도 대회일정 업데이트 잘 안됨. 우선순위 낮음."
+  },
+  {
+    "id": "incheonkumdo",
+    "name": "인천시검도회",
+    "url": "http://www.incheonkumdo.org/default/sube/e1.php",
+    "type": "custom",
+    "active": true,
+    "note": "리스트식 공지페이지. 여러 정보 섞여있음."
+  },
+  {
+    "id": "nwkumdo",
+    "name": "남원시검도회",
+    "url": "http://www.nwkumdo.org/dmboard/list.php?board=notice",
+    "type": "dmboard",
+    "active": true,
+    "note": "리스트식 공지페이지. 남원오픈 대회 공고."
+  },
+  {
+    "id": "kkumdo",
+    "name": "고양시검도회",
+    "url": "http://www.k-kumdo.org/bbs/board.php?bo_table=notice",
+    "type": "gnuboard",
+    "active": true,
+    "note": "공지페이지. 고양 관련 대회 공고."
+  },
+  {
+    "id": "gpkumdo",
+    "name": "가평군검도회",
+    "url": "http://www.gpkumdo.com/dmboard/list.php?board=notice",
+    "type": "dmboard",
+    "active": true,
+    "note": "가평특별군 전국검도 페스티벌 대회 일정."
+  },
+  {
+    "id": "dskumdo",
+    "name": "대선검도회",
+    "url": "http://www.dskumdo.com/default/05/01.php?menu=5&left=1",
+    "type": "custom",
+    "active": true,
+    "note": "대선기 검도대회 공고."
+  }
+]
