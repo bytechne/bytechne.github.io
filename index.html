@@ -536,23 +536,26 @@ document.getElementById('view-list').addEventListener('click',()=>{
 initTheme();
 renderYearly();
 
-// events.json 불러오기 (sessionStorage 캐시 활용)
-const cached = sessionStorage.getItem('kendonow-events');
-if (cached) {
-  EVENTS = JSON.parse(cached);
-  renderCalendar();
-} else {
-  fetch('events.json')
-    .then(r => r.json())
-    .then(data => {
-      EVENTS = data.events || [];
-      sessionStorage.setItem('kendonow-events', JSON.stringify(EVENTS));
-      renderCalendar();
-    })
-    .catch(() => {
-      renderCalendar();
-    });
-}
+// events.json 불러오기
+// updated 타임스탬프가 바뀌면 캐시 무효화
+fetch('events.json')
+  .then(r => r.json())
+  .then(data => {
+    const cachedTime = sessionStorage.getItem('kendonow-updated');
+    if (cachedTime !== data.updated) {
+      // 새 데이터 → 캐시 갱신
+      sessionStorage.setItem('kendonow-updated', data.updated);
+      sessionStorage.setItem('kendonow-events', JSON.stringify(data.events || []));
+    }
+    EVENTS = JSON.parse(sessionStorage.getItem('kendonow-events') || '[]');
+    renderCalendar();
+  })
+  .catch(() => {
+    // fetch 실패 시 캐시라도 사용
+    const cached = sessionStorage.getItem('kendonow-events');
+    EVENTS = cached ? JSON.parse(cached) : [];
+    renderCalendar();
+  });
 </script>
 </body>
 </html>
