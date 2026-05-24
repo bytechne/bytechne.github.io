@@ -1,15 +1,19 @@
-[
-  {
-    "id": "manual_001",
-    "name": "이충무공탄신기념 전국시도대항검도대회",
-    "date": "",
-    "endDate": "",
-    "location": "",
-    "type": "실업",
-    "open": false,
-    "source": "https://www.kumdo.org",
-    "source_site": "manual",
-    "note": "날짜 확인 후 입력 필요",
-    "updated": "2026-05-24"
-  }
-]
+{
+  "updated": "2026-05-24",
+  "count": 1,
+  "events": [
+    {
+      "id": "manual_001",
+      "name": "이충무공탄신기념 전국시도대항검도대회",
+      "date": "2026-04-19",
+      "endDate": "2026-04-19",
+      "location": "충남 아산시 경찰인재개발원",
+      "type": "실업",
+      "open": false,
+      "source": "https://www.kumdo.org",
+      "source_site": "manual",
+      "note": "",
+      "updated": "2026-05-24"
+    }
+  ]
+}

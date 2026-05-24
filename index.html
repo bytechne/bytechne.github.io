@@ -539,7 +539,7 @@ document.getElementById('view-list').addEventListener('click',()=>{
 initTheme();
 renderYearly();
 
-fetch('events.json')
+fetch('manual_events.json')
   .then(r => r.json())
   .then(data => {
     EVENTS = data.events || [];
