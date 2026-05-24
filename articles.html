@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아티클 — 검도나우</title>
+<meta name="description" content="검도 뉴스, 가이드, 인물, 인터뷰.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#ffffff; --bg2:#f8f8f8; --bg3:#f2f2f2;
+  --text:#111111; --text2:#444444; --text3:#888888;
+  --border:#111111; --border2:#dddddd; --border3:#ebebeb;
+  --red:#c0392b; --ev-hover:#f5f5f5;
+}
+[data-theme="dark"] {
+  --bg:#111111; --bg2:#0d0d0d; --bg3:#1a1a1a;
+  --text:#ffffff; --text2:#dddddd; --text3:#aaaaaa;
+  --border:#2a2a2a; --border2:#2a2a2a; --border3:#1e1e1e;
+  --red:#c0392b; --ev-hover:#1a1a1a;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Noto Sans KR',sans-serif; font-weight:400; transition:background 0.25s,color 0.25s; }
+
+header { position:sticky; top:0; z-index:100; background:var(--bg2); border-bottom:3px solid var(--border); transition:background 0.25s,border-color 0.25s; }
+[data-theme="dark"] header { border-bottom-width:1px; }
+.header-inner { max-width:1160px; margin:0 auto; padding:0 24px; height:60px; display:flex; align-items:center; justify-content:space-between; }
+.logo { text-decoration:none; }
+.logo-main { font-size:17px; font-weight:800; color:var(--text); letter-spacing:-0.01em; }
+.logo-main em { color:var(--red); font-style:normal; }
+nav { display:flex; align-items:center; gap:28px; }
+nav a { text-decoration:none; font-size:16px; font-weight:600; color:var(--text3); transition:color 0.15s; }
+nav a:hover { color:var(--text); }
+nav a.nav-article { color:#b8963e; }
+nav a.nav-article:hover { color:#d4a84b; }
+nav a.nav-article.active { color:#b8963e; border-bottom-color:#b8963e; }
+nav a.active { color:var(--text); font-weight:700; border-bottom:2px solid var(--red); padding-bottom:2px; }
+.theme-toggle { display:flex; align-items:center; gap:8px; cursor:pointer; padding:6px 12px; border:1.5px solid var(--border2); border-radius:20px; background:var(--bg3); font-size:12px; font-weight:600; color:var(--text2); white-space:nowrap; }
+.toggle-track { width:32px; height:18px; background:var(--border2); border-radius:9px; position:relative; transition:background 0.25s; }
+[data-theme="dark"] .toggle-track { background:var(--red); }
+.toggle-thumb { position:absolute; top:2px; left:2px; width:14px; height:14px; background:#fff; border-radius:50%; transition:transform 0.25s; box-shadow:0 1px 3px rgba(0,0,0,0.3); }
+[data-theme="dark"] .toggle-thumb { transform:translateX(14px); }
+
+main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
+
+.page-hero { padding:36px 0 24px; border-bottom:2px solid var(--border); display:flex; align-items:flex-end; justify-content:space-between; }
+[data-theme="dark"] .page-hero { border-bottom-width:1px; }
+.page-title { font-family:'Noto Serif KR',serif; font-size:clamp(28px,4vw,48px); font-weight:700; color:var(--text); }
+.article-count { font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--text3); }
+
+.cat-row { display:flex; gap:0; margin:20px 0 24px; border-bottom:2px solid var(--border); transition:border-color 0.25s; }
+[data-theme="dark"] .cat-row { border-bottom-width:1px; }
+.cat-btn { font-size:14px; font-weight:700; padding:10px 20px; border:none; background:transparent; color:var(--text3); cursor:pointer; font-family:'Noto Sans KR',sans-serif; letter-spacing:0.03em; border-bottom:3px solid transparent; margin-bottom:-2px; transition:all 0.15s; }
+[data-theme="dark"] .cat-btn { margin-bottom:-1px; }
+.cat-btn:hover { color:var(--text); }
+.cat-btn.active { color:var(--text); border-bottom-color:var(--red); }
+
+/* 그리드 */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 20px;
+}
+
+
+.article-card { text-decoration:none; color:inherit; display:block; }
+
+.card-img {
+  width:100%;
+  aspect-ratio: 16/10;
+  background:var(--bg3);
+  overflow:hidden;
+  display:block;
+  position:relative;
+}
+
+.card-img img {
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform 0.3s;
+}
+.article-card:hover .card-img img { transform:scale(1.03); }
+
+/* 이미지 없을 때 placeholder */
+.card-img-placeholder {
+  width:100%; height:100%;
+  background:var(--bg3);
+  display:flex; align-items:center; justify-content:center;
+}
+.placeholder-text { font-size:11px; color:var(--text3); letter-spacing:0.1em; }
+
+.card-info { padding:10px 0 0; }
+
+.card-tag {
+  display:inline-block;
+  font-size:10px; font-weight:800;
+  letter-spacing:0.12em;
+  padding:2px 8px;
+  border-radius:2px;
+  margin-bottom:6px;
+}
+.card-tag.NEWS      { background:#e8eef8; color:#1a4d99; }
+.card-tag.GUIDE     { background:#e8f4e8; color:#2d7a2d; }
+.card-tag.PEOPLE    { background:#f5eef8; color:#6b2d9a; }
+.card-tag.INTERVIEW { background:#fff3e0; color:#b36200; }
+[data-theme="dark"] .card-tag.NEWS      { background:#0a1a3a; color:#6090dd; }
+[data-theme="dark"] .card-tag.GUIDE     { background:#1a3a1a; color:#6dcc6d; }
+[data-theme="dark"] .card-tag.PEOPLE    { background:#2a1a3a; color:#b06de0; }
+[data-theme="dark"] .card-tag.INTERVIEW { background:#3a2a0a; color:#e8a030; }
+
+.card-title {
+  font-family:'Noto Serif KR',serif;
+  font-weight:700;
+  color:var(--text);
+  line-height:1.45;
+  word-break:keep-all;
+  font-size:14px;
+}
+
+.card-date { font-size:11px; color:var(--text3); margin-top:6px; }
+
+/* 빈 상태 */
+.empty-msg { text-align:center; padding:80px 24px; color:var(--text3); font-size:14px; line-height:2; }
+
+footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; transition:border-color 0.25s; }
+[data-theme="dark"] footer { border-top-width:1px; }
+.footer-logo { font-size:15px; font-weight:800; color:var(--text3); }
+.footer-text { font-size:11px; color:var(--text3); text-align:right; line-height:1.8; }
+
+@media(max-width:900px) {
+  .article-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:600px) {
+  nav a:not(.active) { display:none; }
+  .article-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-main">검도나우</span>
+    </a>
+    <nav>
+      <a href="index.html#calendar">대회 일정</a>
+      <a href="index.html#yearly">연간 대회</a>
+      <a href="articles.html" class="active nav-article">아티클</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
+      <span id="theme-label">🌙 다크</span>
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-hero">
+    <h1 class="page-title">아티클</h1>
+    <span class="article-count" id="article-count"></span>
+  </div>
+
+  <div class="cat-row">
+    <button class="cat-btn active" data-cat="전체">전체</button>
+    <button class="cat-btn" data-cat="NEWS">News</button>
+    <button class="cat-btn" data-cat="GUIDE">Guide</button>
+    <button class="cat-btn" data-cat="PEOPLE">People</button>
+    <button class="cat-btn" data-cat="INTERVIEW">Interview</button>
+  </div>
+
+  <div class="article-grid" id="article-grid"></div>
+  <div class="empty-msg" id="empty-msg" style="display:none;">
+    아직 작성된 아티클이 없습니다.<br>곧 업데이트될 예정입니다.
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-logo">Kendo Now</div>
+  <div class="footer-text">
+    대회 정보는 각 협회 공식 사이트에서 수집됩니다.<br>
+    오류 제보 및 문의: bytechne39@gmail.com
+  </div>
+</footer>
+
+<script>
+// ── 아티클 데이터 ──
+// 글 추가 시 이 배열에 항목 하나씩 추가하면 됩니다.
+// img: 이미지 경로 (없으면 "" 로 두면 placeholder 표시)
+const ARTICLES = [
+  {
+    id: 1,
+    tag: "GUIDE",
+    title: "처음 검도 대회 출전하기 — 준비부터 당일까지",
+    date: "2026.05",
+    img: "",
+    url: "articles/guide-first-tournament.html"
+  },
+  {
+    id: 2,
+    tag: "GUIDE",
+    title: "호구 고르는 법 — 입문자를 위한 완전 가이드",
+    date: "2026.04",
+    img: "",
+    url: "articles/guide-hogu.html"
+  },
+  {
+    id: 3,
+    tag: "NEWS",
+    title: "2026 세계검도선수권대회 일정 및 관전 포인트",
+    date: "2026.03",
+    img: "",
+    url: "articles/news-wkc2026.html"
+  }
+];
+
+let curCat = "전체";
+
+function renderGrid() {
+  const filtered = curCat === "전체" ? ARTICLES : ARTICLES.filter(a => a.tag === curCat);
+  const grid = document.getElementById('article-grid');
+  const empty = document.getElementById('empty-msg');
+  const count = document.getElementById('article-count');
+
+  count.textContent = filtered.length;
+
+  if (!filtered.length) {
+    grid.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+
+  grid.style.display = 'grid';
+  empty.style.display = 'none';
+
+  grid.innerHTML = filtered.map(a => {
+    const imgHtml = a.img
+      ? `<img src="${a.img}" alt="${a.title}" loading="lazy">`
+      : `<div class="card-img-placeholder"><span class="placeholder-text">IMAGE</span></div>`;
+    return `
+      <a class="article-card" href="${a.url}">
+        <div class="card-img">${imgHtml}</div>
+        <div class="card-info">
+          <span class="card-tag ${a.tag}">${a.tag}</span>
+          <div class="card-title">${a.title}</div>
+          <div class="card-date">${a.date}</div>
+        </div>
+      </a>`;
+  }).join('');
+}
+
+document.querySelectorAll('.cat-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    curCat = btn.dataset.cat;
+    renderGrid();
+  });
+});
+
+function initTheme() {
+  const saved = localStorage.getItem('kendo-theme') || 'light';
+  applyTheme(saved);
+}
+function toggleTheme() {
+  applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+}
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('kendo-theme', t);
+  document.getElementById('theme-label').textContent = t === 'light' ? '🌙 다크' : '☀️ 라이트';
+}
+
+initTheme();
+renderGrid();
+</script>
+</body>
+</html>
