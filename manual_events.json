@@ -3,16 +3,29 @@
   "count": 1,
   "events": [
     {
-      "id": "manual_001",
-      "name": "이충무공탄신기념 전국시도대항검도대회",
-      "date": "2026-04-19",
-      "endDate": "2026-04-19",
-      "location": "충남 아산시 경찰인재개발원",
-      "type": "실업",
+      "id": "manual_000",
+      "name": "test",
+      "date": "2026-01-01",
+      "endDate": "2026-01-02",
+      "location": "검도최고",
+      "type": "생체",
       "open": false,
-      "source": "https://www.kumdo.org",
+      "source": "https://bytechne.github.io/",
       "source_site": "manual",
-      "note": "",
+      "note": "테스트일정",
+      "updated": "2026-05-24"
+    },   
+    {
+      "id": "manual_001",
+      "name": "남원오픈검도대회",
+      "date": "2026-06-12",
+      "endDate": "2026-06-14",
+      "location": "남원실내체육관",
+      "type": "생체",
+      "open": false,
+      "source": "http://www.nwkumdo.org/dmboard/list.php?board=notice&mode=view&idx=216&search=&searchstring=&page=1",
+      "source_site": "manual",
+      "note": "남원오픈 검도대회, 조병용선생추모 검도대회",
       "updated": "2026-05-24"
     },
     {
