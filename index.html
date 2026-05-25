@@ -386,9 +386,8 @@ function renderCalendar(){
     if(isToday)cls+=' today';
     if(dayEvs.length)cls+=' has-event';
     const clip=s=>s.length>9?s.slice(0,9)+'…':s;
-    const labels=dayEvs.map(e=>`<span class="event-label ${e.type}">${clip(e.name)}</span>`).join('');
-    const oc=dayEvs.length?`onclick="openModal('${dayEvs[0].id}')"`:'' ;
-    html+=`<div class="${cls}" ${oc}><span class="cal-date-num">${d}</span>${labels}</div>`;
+    const labels=dayEvs.map(e=>`<span class="event-label ${e.type}" onclick="event.stopPropagation();openModal('${e.id}')" style="cursor:pointer">${clip(e.name)}</span>`).join('');
+    html+=`<div class="${cls}"><span class="cal-date-num">${d}</span>${labels}</div>`;
   }
   const total=firstDay+lastDate;
   const rem=total%7===0?0:7-(total%7);
