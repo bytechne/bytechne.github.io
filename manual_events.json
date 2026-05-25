@@ -228,10 +228,10 @@
       "name": "아시아·오세아니아 검도선수권대회(1AOKC)",
       "date": "2026-05-30",
       "endDate": "2026-05-31",
-      "location": "",
+      "location": "일본, 도쿄",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1889&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1889&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제1회, 세계대회",
       "updated": "2026-05-24"
@@ -241,10 +241,10 @@
       "name": "회장기 제26회 전국검도7단선수권대회",
       "date": "2026-06-06",
       "endDate": "2026-06-06",
-      "location": "",
+      "location": "충북, 음성군, 중앙연수원",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1892&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1892&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "",
       "updated": "2026-05-24"
@@ -254,10 +254,10 @@
       "name": "대한검도회장기 전국중·고등학교검도대회",
       "date": "2026-06-20",
       "endDate": "2026-06-23",
-      "location": "",
+      "location": "경북, 구미시",
       "type": "학생",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1894&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1894&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제9회, 중고등학생",
       "updated": "2026-05-24"
@@ -280,10 +280,10 @@
       "name": "회장배 전국실업검도선수권대회",
       "date": "2026-06-26",
       "endDate": "2026-06-29",
-      "location": "",
+      "location": "경북, 영천시",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1893&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1893&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제11회",
       "updated": "2026-05-24"
@@ -293,10 +293,10 @@
       "name": "대한민국 검도8단선수권대회",
       "date": "2026-07-04",
       "endDate": "2026-07-04",
-      "location": "중앙연수원",
+      "location": "충북, 음성군, 중앙연수원",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1899&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1899&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제16회",
       "updated": "2026-05-24"
@@ -309,7 +309,7 @@
       "location": "",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1901&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1901&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제4회",
       "updated": "2026-05-24"
@@ -322,7 +322,7 @@
       "location": "서울, 올림픽핸드볼경기장",
       "type": "생체",
       "open": true,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1902&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1902&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제39회, 국제오픈",
       "updated": "2026-05-24"
@@ -332,10 +332,10 @@
       "name": "대구대학교총장기 전국고등학교검도대회",
       "date": "2026-07-21",
       "endDate": "2026-07-22",
-      "location": "",
+      "location": "경북, 영천시",
       "type": "학생",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1906&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1906&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제29회",
       "updated": "2026-05-24"
@@ -348,7 +348,7 @@
       "location": "충북, 청주시",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1907&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1907&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "",
       "updated": "2026-05-24"
@@ -361,7 +361,7 @@
       "location": "경북, 청송군",
       "type": "학생",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1908&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1908&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제9회, 초등학생",
       "updated": "2026-05-24"
@@ -374,7 +374,7 @@
       "location": "경남, 창녕군",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1910&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1910&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "",
       "updated": "2026-05-24"
@@ -387,7 +387,7 @@
       "location": "",
       "type": "학생",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1912&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1912&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "",
       "updated": "2026-05-24"
@@ -400,7 +400,7 @@
       "location": "경북, 문경시",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1913&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1913&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제25회",
       "updated": "2026-05-24"
@@ -413,7 +413,7 @@
       "location": "충북, 음성군, 중앙연수원",
       "type": "생체",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1914&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1914&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제22회",
       "updated": "2026-05-24"
@@ -426,7 +426,7 @@
       "location": "경북, 경주시",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1915&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1915&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "",
       "updated": "2026-05-24"
@@ -439,7 +439,7 @@
       "location": "",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1916&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1916&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제23회",
       "updated": "2026-05-24"
@@ -452,7 +452,7 @@
       "location": "충남, 금산군",
       "type": "생체",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1917&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1917&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제13회",
       "updated": "2026-05-24"
@@ -465,7 +465,7 @@
       "location": "전북, 고창군",
       "type": "학생",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1918&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1918&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제6회, 대학생",
       "updated": "2026-05-24"
@@ -478,7 +478,7 @@
       "location": "제주, 제주고체육관",
       "type": "실업",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1919&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1919&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제107회",
       "updated": "2026-05-24"
@@ -491,7 +491,7 @@
       "location": "전북, 무주군",
       "type": "학생",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1923&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1923&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제27회, 초등학생",
       "updated": "2026-05-24"
@@ -504,7 +504,7 @@
       "location": "전북, 전주시",
       "type": "학생",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1925&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1924&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제43회, 중고등학생",
       "updated": "2026-05-24"
@@ -517,7 +517,7 @@
       "location": "전남, 보성군",
       "type": "학생",
       "open": false,
-      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1925&shsubid=&page=1&year=&month=&sca=대회",
+      "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1925&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
       "note": "제43회, 대학생",
       "updated": "2026-05-24"
