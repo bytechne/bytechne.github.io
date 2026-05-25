@@ -117,7 +117,10 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
 .footer-text { font-size:11px; color:var(--text3); text-align:right; line-height:1.8; }
 
 @media(max-width:768px) {
-  nav a:not(.active) { display:none; }
+  .header-inner { height:auto; padding:10px 16px; flex-wrap:wrap; gap:8px; }
+  nav { gap:16px; flex-wrap:wrap; }
+  nav a { font-size:14px; }
+  
   .event-item { grid-template-columns:60px 1fr; }
   .event-tag-wrap { display:none; }
 }
