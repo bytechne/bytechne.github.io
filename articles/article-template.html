@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글제목 — 검도나우</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7J06DL49SS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7J06DL49SS');
+</script>
+<style>
+:root {
+  --bg:#ffffff; --bg2:#f8f8f8; --bg3:#f2f2f2;
+  --text:#111111; --text2:#444444; --text3:#888888;
+  --border:#111111; --border2:#dddddd; --border3:#ebebeb;
+  --red:#c0392b; --ev-hover:#f5f5f5;
+}
+[data-theme="dark"] {
+  --bg:#111111; --bg2:#0d0d0d; --bg3:#1a1a1a;
+  --text:#ffffff; --text2:#dddddd; --text3:#aaaaaa;
+  --border:#2a2a2a; --border2:#2a2a2a; --border3:#1e1e1e;
+  --red:#c0392b; --ev-hover:#1a1a1a;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Noto Sans KR',sans-serif; font-weight:400; transition:background 0.25s,color 0.25s; line-height:1.8; }
+
+/* 헤더 */
+header { position:sticky; top:0; z-index:100; background:var(--bg2); border-bottom:3px solid var(--border); transition:background 0.25s,border-color 0.25s; }
+[data-theme="dark"] header { border-bottom-width:1px; }
+.header-inner { max-width:1160px; margin:0 auto; padding:0 24px; height:60px; display:flex; align-items:center; justify-content:space-between; }
+.logo { text-decoration:none; }
+.logo-main { font-size:17px; font-weight:800; color:var(--text); }
+.logo-main em { color:var(--red); font-style:normal; }
+nav { display:flex; align-items:center; gap:28px; }
+nav a, nav a:visited { text-decoration:none; font-size:16px; font-weight:600; color:var(--text3); transition:color 0.15s; }
+nav a:hover { color:var(--text); }
+nav a.active, nav a.active:visited { color:var(--text); font-weight:700; border-bottom:2px solid var(--red); padding-bottom:2px; }
+.theme-toggle { display:flex; align-items:center; gap:8px; cursor:pointer; padding:6px 12px; border:1.5px solid var(--border2); border-radius:20px; background:var(--bg3); font-size:12px; font-weight:600; color:var(--text2); white-space:nowrap; }
+.toggle-track { width:32px; height:18px; background:var(--border2); border-radius:9px; position:relative; transition:background 0.25s; }
+[data-theme="dark"] .toggle-track { background:var(--red); }
+.toggle-thumb { position:absolute; top:2px; left:2px; width:14px; height:14px; background:#fff; border-radius:50%; transition:transform 0.25s; box-shadow:0 1px 3px rgba(0,0,0,0.3); }
+[data-theme="dark"] .toggle-thumb { transform:translateX(14px); }
+
+/* 아티클 레이아웃 */
+.article-wrap { max-width:720px; margin:0 auto; padding:48px 24px 80px; }
+
+/* 아티클 헤더 */
+.article-header { margin-bottom:40px; padding-bottom:24px; border-bottom:2px solid var(--border); }
+[data-theme="dark"] .article-header { border-bottom-width:1px; }
+.article-tag { font-size:11px; font-weight:700; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; }
+.article-title { font-family:'Noto Serif KR',serif; font-size:clamp(24px,3vw,36px); font-weight:700; line-height:1.3; color:var(--text); margin-bottom:16px; }
+.article-meta { font-size:13px; color:var(--text3); display:flex; gap:16px; }
+
+/* 본문 스타일 */
+.article-body { font-size:16px; color:var(--text2); }
+.article-body h2 { font-family:'Noto Serif KR',serif; font-size:22px; font-weight:700; color:var(--text); margin:40px 0 16px; padding-bottom:8px; border-bottom:1.5px solid var(--border2); }
+.article-body h3 { font-size:18px; font-weight:700; color:var(--text); margin:28px 0 12px; }
+.article-body p { margin-bottom:20px; word-break:keep-all; }
+.article-body img { width:100%; border-radius:4px; margin:24px 0; display:block; }
+.article-body .img-caption { text-align:center; font-size:12px; color:var(--text3); margin-top:-16px; margin-bottom:24px; }
+
+/* 이미지 2열 레이아웃 */
+.article-body .img-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:24px 0; }
+.article-body .img-row img { margin:0; }
+
+/* 강조 박스 */
+.article-body .tip-box { background:var(--bg3); border-left:3px solid var(--red); padding:16px 20px; border-radius:0 4px 4px 0; margin:24px 0; font-size:15px; }
+
+/* 구분선 */
+.article-body hr { border:none; border-top:1px solid var(--border2); margin:32px 0; }
+
+/* 푸터 */
+footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+[data-theme="dark"] footer { border-top-width:1px; }
+.footer-logo { font-size:15px; font-weight:800; color:var(--text3); }
+.footer-text { font-size:11px; color:var(--text3); text-align:right; line-height:1.8; }
+
+/* 이전/다음 글 */
+.article-nav { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:48px; padding-top:24px; border-top:1px solid var(--border2); }
+.article-nav a { text-decoration:none; padding:16px; border:1.5px solid var(--border2); border-radius:4px; color:inherit; transition:background 0.1s; }
+.article-nav a:hover { background:var(--ev-hover); }
+.article-nav .nav-label { font-size:11px; color:var(--text3); margin-bottom:6px; }
+.article-nav .nav-title { font-size:14px; font-weight:600; color:var(--text); }
+.article-nav .next { text-align:right; }
+
+@media(max-width:768px) {
+  .header-inner { height:auto; padding:10px 16px; flex-wrap:wrap; gap:8px; }
+  nav { gap:16px; flex-wrap:wrap; }
+  nav a { font-size:14px; }
+  .article-body .img-row { grid-template-columns:1fr; }
+  .article-nav { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-main">검도나우</span>
+    </a>
+    <nav>
+      <a href="../index.html">대회 일정</a>
+      <a href="../schedule.html">연간 대회</a>
+      <a href="../articles.html" class="active">아티클</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
+      <span id="theme-label">🌙 다크</span>
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    </button>
+  </div>
+</header>
+
+<div class="article-wrap">
+
+  <!-- ✏️ 아티클 헤더 : 태그/제목/날짜 수정 -->
+  <div class="article-header">
+    <div class="article-tag">NEWS</div>  <!-- NEWS / GUIDE / PEOPLE / INTERVIEW -->
+    <h1 class="article-title">여기에 글 제목을 입력하세요</h1>
+    <div class="article-meta">
+      <span>2026.05.25</span>
+      <span>검도나우</span>
+    </div>
+  </div>
+
+  <!-- ✏️ 본문 시작 : 아래 내용을 원하는 대로 수정/추가 -->
+  <div class="article-body">
+
+    <!-- 단락 -->
+    <p>여기에 본문 첫 번째 단락을 씁니다. 엔터 두 번 치면 새 단락이 됩니다.</p>
+
+    <p>두 번째 단락입니다.</p>
+
+    <!-- 소제목 -->
+    <h2>소제목 (H2)</h2>
+
+    <p>소제목 아래 내용입니다.</p>
+
+    <!-- 이미지 1장 -->
+    <img src="이미지파일명.jpg" alt="이미지 설명">
+    <div class="img-caption">이미지 설명 (선택사항)</div>
+
+    <!-- 이미지 2장 나란히 -->
+    <div class="img-row">
+      <img src="이미지1.jpg" alt="">
+      <img src="이미지2.jpg" alt="">
+    </div>
+
+    <!-- 강조 박스 -->
+    <div class="tip-box">
+      💡 여기에 강조하고 싶은 내용을 씁니다. 팁이나 중요한 정보에 사용하세요.
+    </div>
+
+    <!-- 더 작은 소제목 -->
+    <h3>작은 소제목 (H3)</h3>
+
+    <p>내용 계속...</p>
+
+    <!-- 구분선 -->
+    <hr>
+
+    <p>마지막 단락입니다.</p>
+
+  </div>
+  <!-- ✏️ 본문 끝 -->
+
+  <!-- 이전/다음 글 링크 (선택사항) -->
+  <div class="article-nav">
+    <a href="이전글파일명.html">
+      <div class="nav-label">← 이전 글</div>
+      <div class="nav-title">이전 글 제목</div>
+    </a>
+    <a href="다음글파일명.html" class="next">
+      <div class="nav-label">다음 글 →</div>
+      <div class="nav-title">다음 글 제목</div>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Kendo Now</div>
+  <div class="footer-text">
+    대회 정보는 각 협회 공식 사이트에서 수집됩니다.<br>
+    오류 제보 및 문의: bytechne39@gmail.com
+  </div>
+</footer>
+
+<script>
+function initTheme() {
+  const saved = localStorage.getItem('kendo-theme') || 'light';
+  applyTheme(saved);
+}
+function toggleTheme() {
+  applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+}
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('kendo-theme', t);
+  document.getElementById('theme-label').textContent = t === 'light' ? '🌙 다크' : '☀️ 라이트';
+}
+initTheme();
+</script>
+</body>
+</html>
