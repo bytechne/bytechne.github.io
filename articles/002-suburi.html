@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>집에서 혼자 하는 검도 수련, 후리기는 정말 효과가 있을까 — 검도나우</title>
+<meta name="description" content="도장에 가지 못하는 날, 후리기(스부리)는 정말 검도 실력 향상에 도움이 될까. 고단자들의 의견과 실전 루틴을 정리했다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7J06DL49SS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7J06DL49SS');
+</script>
+<style>
+:root {
+  --bg:#ffffff; --bg2:#f8f8f8; --bg3:#f2f2f2;
+  --text:#111111; --text2:#444444; --text3:#888888;
+  --border:#111111; --border2:#dddddd; --border3:#ebebeb;
+  --red:#c0392b; --ev-hover:#f5f5f5;
+}
+[data-theme="dark"] {
+  --bg:#111111; --bg2:#0d0d0d; --bg3:#1a1a1a;
+  --text:#ffffff; --text2:#dddddd; --text3:#aaaaaa;
+  --border:#2a2a2a; --border2:#2a2a2a; --border3:#1e1e1e;
+  --red:#c0392b; --ev-hover:#1a1a1a;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Noto Sans KR',sans-serif; font-weight:400; transition:background 0.25s,color 0.25s; line-height:1.8; }
+header { position:sticky; top:0; z-index:100; background:var(--bg2); border-bottom:3px solid var(--border); transition:background 0.25s,border-color 0.25s; }
+[data-theme="dark"] header { border-bottom-width:1px; }
+.header-inner { max-width:1160px; margin:0 auto; padding:0 24px; height:60px; display:flex; align-items:center; justify-content:space-between; }
+.logo { text-decoration:none; }
+.logo-main { font-size:17px; font-weight:800; color:var(--text); }
+.logo-main em { color:var(--red); font-style:normal; }
+nav { display:flex; align-items:center; gap:28px; }
+nav a, nav a:visited { text-decoration:none; font-size:16px; font-weight:600; color:var(--text3); transition:color 0.15s; }
+nav a:hover { color:var(--text); }
+nav a.active, nav a.active:visited { color:var(--text); font-weight:700; border-bottom:2px solid var(--red); padding-bottom:2px; }
+.header-controls { display:flex; align-items:center; gap:10px; }
+.theme-toggle { display:flex; align-items:center; gap:8px; cursor:pointer; padding:6px 12px; border:1.5px solid var(--border2); border-radius:20px; background:var(--bg3); font-size:12px; font-weight:600; color:var(--text2); white-space:nowrap; }
+.toggle-track { width:32px; height:18px; background:var(--border2); border-radius:9px; position:relative; transition:background 0.25s; }
+[data-theme="dark"] .toggle-track { background:var(--red); }
+.toggle-thumb { position:absolute; top:2px; left:2px; width:14px; height:14px; background:#fff; border-radius:50%; transition:transform 0.25s; box-shadow:0 1px 3px rgba(0,0,0,0.3); }
+[data-theme="dark"] .toggle-thumb { transform:translateX(14px); }
+
+/* 언어 토글 */
+.lang-toggle { display:flex; border:1.5px solid var(--border2); border-radius:20px; overflow:hidden; }
+.lang-btn { padding:5px 12px; font-size:12px; font-weight:700; border:none; background:transparent; color:var(--text3); cursor:pointer; font-family:'Noto Sans KR',sans-serif; transition:all 0.15s; letter-spacing:0.05em; }
+.lang-btn.active { background:var(--border); color:#fff; }
+[data-theme="dark"] .lang-btn.active { background:var(--red); }
+
+.article-wrap { max-width:720px; margin:0 auto; padding:48px 24px 80px; }
+.back-link { display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--text3); text-decoration:none; margin-bottom:32px; transition:color 0.15s; }
+.back-link:hover { color:var(--text); }
+.article-header { margin-bottom:32px; padding-bottom:24px; border-bottom:2px solid var(--border); }
+[data-theme="dark"] .article-header { border-bottom-width:1px; }
+.article-tag { font-size:11px; font-weight:700; letter-spacing:0.12em; color:var(--red); margin-bottom:12px; }
+.article-title { font-family:'Noto Serif KR',serif; font-size:clamp(20px,3vw,32px); font-weight:700; line-height:1.3; color:var(--text); margin-bottom:16px; }
+.article-meta { font-size:13px; color:var(--text3); display:flex; gap:16px; }
+.article-body { font-size:16px; color:var(--text2); }
+.article-body h2 { font-family:'Noto Serif KR',serif; font-size:22px; font-weight:700; color:var(--text); margin:40px 0 16px; padding-bottom:8px; border-bottom:1.5px solid var(--border2); }
+.article-body h3 { font-size:16px; font-weight:700; color:var(--text); margin:28px 0 10px; }
+.article-body p { margin-bottom:20px; word-break:keep-all; }
+.article-body img { width:100%; border-radius:4px; margin:28px 0 8px; display:block; }
+.article-body .img-caption { text-align:center; font-size:12px; color:var(--text3); margin-bottom:28px; }
+.article-body a { color:var(--red); text-decoration:none; }
+.article-body a:hover { text-decoration:underline; }
+.article-body .tip-box { background:var(--bg3); border-left:3px solid var(--red); padding:16px 20px; margin:24px 0; font-size:15px; border-radius:0 4px 4px 0; line-height:1.8; }
+.sources { margin-top:48px; padding-top:24px; border-top:1px solid var(--border2); }
+.sources h2 { font-size:14px; font-weight:700; color:var(--text3); margin-bottom:16px; letter-spacing:0.05em; }
+.sources ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.sources li { font-size:13px; color:var(--text3); line-height:1.6; }
+.sources li a { color:var(--text3); text-decoration:underline; word-break:break-all; }
+.sources li a:hover { color:var(--red); }
+.lang-ko, .lang-en { display:none; }
+.lang-ko.active, .lang-en.active { display:block; }
+footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+[data-theme="dark"] footer { border-top-width:1px; }
+.footer-logo { font-size:15px; font-weight:800; color:var(--text3); }
+.footer-text { font-size:11px; color:var(--text3); text-align:right; line-height:1.8; }
+@media(max-width:768px) {
+  .header-inner { height:auto; padding:10px 16px; flex-wrap:wrap; gap:8px; }
+  nav { gap:16px; flex-wrap:wrap; }
+  nav a { font-size:14px; }
+  .header-controls { gap:8px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo"><span class="logo-main">검도나우</span></a>
+    <nav>
+      <a href="../index.html">대회 일정</a>
+      <a href="../schedule.html">연간 대회</a>
+      <a href="../articles.html" class="active">아티클</a>
+    </nav>
+    <div class="header-controls">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-ko" onclick="setLang('ko')">KO</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
+        <span id="theme-label">🌙 다크</span>
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <a href="../articles.html" class="back-link">← 아티클 목록</a>
+
+  <!-- 한국어 -->
+  <div class="lang-ko active" id="content-ko">
+    <div class="article-header">
+      <div class="article-tag">WORLD</div>
+      <h1 class="article-title">집에서 혼자 하는 검도 수련,<br>후리기는 정말 효과가 있을까</h1>
+      <div class="article-meta">
+        <span>2026.06.01</span>
+        <span>검도나우</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <img src="article_002.jpg" alt="후리기 수련">
+      <p>검도를 시작한 첫날부터 도장을 떠나는 마지막 날까지, 후리기(스부리, 素振り)는 항상 그 자리에 있다. 수련 시작 전 몸을 푸는 의식처럼 반복되는 이 동작은, 입문자 시절에는 팔이 떨어질 듯 힘겨운 훈련이지만 검도에 익숙해질수록 어느새 단순한 워밍업 이상의 의미를 갖지 않게 된다.</p>
+      <p>직장생활과 육아, 자기개발에 치이다 보면 도장 문턱이 점점 높아진다. 도장에 발걸음하지 못하고 속을 태우는 검도인이 필자뿐이랴. 도장에 가지 못하는 날에도 집에서, 회사 창고에서, 비어있는 회의실에서라도 검도 실력에 도움이 될 무언가를 찾다 보면 결국 가장 기초적인 질문으로 돌아오게 된다. 후리기, 이게 정말 도움이 되는 걸까.</p>
+
+      <h2>후리기는 원래 그렇게 중요한 것이 아니었다</h2>
+      <p>영국에 거주하며 일본 검도를 연구하는 George McCall(kenshi247.net 운영자)은 전전(戰前) 검도 교범들을 연구한 결과 흥미로운 사실을 발견했다. 다카노 사부로(高野佐三郎)의 1930년 검도 교범, 오가와 긴노스케(小川金之助)의 1937년 교범 등 당시 대부분의 교본에서 스부리에 대한 언급이 거의 없다는 것이다. 당시 검도 교육의 중심은 혼자 하는 연습이 아니라 상대와 함께하는 파트너 연습이었다.</p>
+      <p>후리기가 검도 수련의 정식 일부로 자리잡은 것은 전후(戰後), 특히 1960년대 이후 아동 검도 붐과 학교 체육 교육의 영향으로 수련 방식이 체계화되면서부터다.</p>
+
+      <h2>그렇다면 후리기는 의미가 없는가</h2>
+      <p>그렇지 않다. 고단자 지도자들의 의견은 비교적 일관된다.</p>
+      <p>스에노 한시 8단(1979년 전일본 우승)은 세미나에서 이렇게 말했다. "스부리를 제대로 할 수 없다면, 검도 경력이 아무리 길어도 검도를 할 수 없다." 그는 죽도의 궤도가 몸의 중심선을 따라 부드럽게 움직여야 하며, 어깨·팔꿈치·손목 세 관절을 모두 사용해야 한다고 강조했다.</p>
+      <p>사카모토 타카시 7단은 "후리기 하나하나가 시합에 영향을 미친다. 단순한 워밍업이 아니라 소중한 수련 방법으로 대해야 한다"고 했으며, 후리기를 잘 하는 학생이 결국 강한 검도인이 된다고 말했다.</p>
+      <p>전일본검도연맹 이사이자 8단인 구리타 와이치로(栗田和一郎)는 이렇게 말했다. "도쿄 경시청 검도 특련 시절, 동계 훈련에서 하루 1,000번의 후리기를 했다. 정면후리기, 전후후리기, 좌우면후리기 등 종류별로 100~200번씩 나눠서 했다. 1,000번은 약 40분이 걸린다. 동호인들과 함께 할 때는 100번에서 200번으로 조금씩 늘리는 것을 권장한다. 후리기만으로 실력이 느는 건 아니지만, 올바르게 하면 분명히 배우는 것이 있다."</p>
+      <p>그는 코로나19로 파트너 연습이 불가능했던 기간에 후리기에 집중한 덕분에 연습 재개 후에도 실력 저하를 거의 느끼지 못했다고 덧붙였다.</p>
+
+      <h2>후리기의 실질적 효과</h2>
+      <p>전일본검도연맹의 공식 검도 지도 지침서는 후리기의 목적을 이렇게 명시한다. "죽도 조작과 올바른 칼날 궤도(하수지, 刃筋)를 익히고, 손아귀 힘의 사용법(테노우치, 手の内)을 배우며, 발 움직임을 활용한 타격의 기초를 익힌다."</p>
+      <p>수련 수준에 따라 후리기의 의미는 달라진다. 입문자에게는 죽도를 다루는 근육을 만드는 힘 훈련이다. 특히 왼손과 왼팔의 근력을 키우는 데 효과적이다. 어느 정도 수준에 오른 검도인에게는 음악가의 음계 연습과 같다. George McCall은 이렇게 표현했다. "죽도와 몸이 연결되어 있는 감각을 유지시켜 준다. 뭔가 틀어진 것이 있으면 도장보다 고요한 환경에서 발견하고 점검할 수 있다."</p>
+      <p>반면 그는 동시에 중요한 한계도 지적한다. "후리기만으로는 손아귀 힘의 사용법(테노우치)을 제대로 익힐 수 없다. 실제로 무언가를 타격하는 것이 훨씬 중요하다. 도장 시간이 제한되어 있다면 후리기보다 연속타격 왕복 수련(기리카에시, 切り返し)이나 타격 반복 훈련(우치코미, 打ち込み)이 훨씬 효과적이다."</p>
+
+      <h2>집에서 할 수 있는 후리기 루틴</h2>
+      <p>그렇다면 구체적으로 어떻게 하면 좋을까. 아래는 전문가들의 의견을 바탕으로 한 참고용 제안이다. 개인의 체력과 수련 수준에 따라 조절하는 것이 중요하다.</p>
+      <h3>입문자</h3>
+      <p>매일 15~20분을 목표로 한다. 정면후리기 30번, 전후후리기 30번, 좌우면후리기 20번 순서로 시작한다. 거울 앞에서 죽도의 궤도와 자세를 확인하는 것이 중요하다. 속도보다 정확성을 우선한다.</p>
+      <h3>유단자 이상</h3>
+      <p>정면후리기 100번을 기준으로 시작해 200번까지 점진적으로 늘린다. 구리타 8단의 말처럼 100번은 약 5분, 200번은 약 10분이면 된다. 체력 향상을 위해서는 빠른후리기(速素振り) 30번 5세트를 추가해볼 수 있다. 중량목검(스부리토, 素振り刀)으로 힘을 키우고, 가벼운 목검으로 칼날 궤도(하수지)를 교정하는 방식을 병행하면 효과적이다.</p>
+      <div class="tip-box">
+        ⚠️ <strong>반드시 기억할 것</strong><br>
+        횟수보다 질이 중요하다. 모든 후리기는 유효타의 조건 — 올바른 타격 부위, 올바른 죽도 부위, 기합, 바른 자세, 잔심 — 을 의식하며 해야 한다. 통증이 느껴지면 즉시 멈춘다. 잘못된 폼으로 반복하는 것은 나쁜 습관을 강화할 뿐이다.
+      </div>
+
+      <h2>결론</h2>
+      <p>후리기는 검도 역사에서 생각보다 최근에 정착된 수련법이다. 만병통치약은 아니며, 도장에서의 파트너 연습을 대체할 수는 없다. 그러나 도장에 가지 못하는 날, 몸과 죽도의 연결을 유지하고 자신의 폼을 점검하는 용도로는 분명히 의미가 있다. 다카노 사부로의 말처럼, "케이코를 할 수 없을 때 달리기와 후리기를 하면 절대 약해지지 않는다."</p>
+
+      <div class="sources">
+        <h2>참고 자료</h2>
+        <ul>
+          <li>George McCall, <em>Suburi: a brief discussion</em>, kenshi247.net (2018)<br><a href="https://kenshi247.net/blog/2018/08/16/suburi-a-brief-discussion/" target="_blank">https://kenshi247.net/blog/2018/08/16/suburi-a-brief-discussion/</a></li>
+          <li>Kurita Waichiro (Hanshi 8th Dan), <em>The Suburi of a First-class Kenshi</em>, Kendo Jidai International (2024)<br><a href="https://kendojidai.com/2024/01/29/the-suburi-of-a-first-class-kenshi/" target="_blank">https://kendojidai.com/2024/01/29/the-suburi-of-a-first-class-kenshi/</a></li>
+          <li>Sueno Sensei (Hanshi 8th Dan) seminar notes, kendoinfo.net (2012)<br><a href="https://kendoinfo.wordpress.com/2012/07/02/the-importance-of-suburi/" target="_blank">https://kendoinfo.wordpress.com/2012/07/02/the-importance-of-suburi/</a></li>
+          <li>Sakamoto Takashi (7th Dan) seminar notes, Kendo Jidai International (2019)<br><a href="https://kendojidai.com/2019/09/16/the-importance-of-kamae-and-suburi/" target="_blank">https://kendojidai.com/2019/09/16/the-importance-of-kamae-and-suburi/</a></li>
+          <li><em>How many suburi is enough?</em>, kendo-guide.com<br><a href="https://www.kendo-guide.com/how-many-suburi-is-enough.html" target="_blank">https://www.kendo-guide.com/how-many-suburi-is-enough.html</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 영어 -->
+  <div class="lang-en" id="content-en">
+    <div class="article-header">
+      <div class="article-tag">WORLD</div>
+      <h1 class="article-title">Solo Kendo Training at Home —<br>Does Suburi Actually Work?</h1>
+      <div class="article-meta">
+        <span>2026.06.01</span>
+        <span>KendoNow</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <img src="article_002.jpg" alt="Suburi practice">
+      <p>From the very first day you pick up a shinai to the day you hang it up for good, suburi (素振り) is always there. It's repeated like a ritual at the start of every practice — exhausting for beginners, but somewhere along the way it quietly fades into "just a warm-up" for many practitioners.</p>
+      <p>Work, parenting, personal obligations — life has a way of making the dojo feel further and further away. Every kendoka knows the frustration of days, sometimes weeks, away from practice. In searching for something — anything — to keep up the training on those days, the answer keeps coming back to the most basic question: does suburi actually help?</p>
+
+      <h2>Suburi Wasn't Always Considered Important</h2>
+      <p>George McCall, a kendo researcher and author based in the UK (kenshi247.net), made an interesting discovery while studying pre-war Japanese kendo manuals. In major texts such as Takano Sasaburo's 1930 <em>Kendo Kyohon</em> and Ogawa Kinnosuke's 1937 manual, references to suburi are almost entirely absent. The focus of kendo instruction at the time was partner practice, not solo swinging.</p>
+      <p>Suburi only became a standard part of kendo training in the post-war period — particularly from the 1960s onward — as kendo entered school curricula and instruction methods became more systematized for group teaching.</p>
+
+      <h2>So Is Suburi Pointless?</h2>
+      <p>Not at all. High-ranking instructors are fairly consistent in their views.</p>
+      <p>Sueno Sensei, Hanshi 8th Dan and 1979 All Japan Champion, stated at a seminar: "If you cannot do suburi properly, no matter how long your kendo experience, you cannot do kendo." He emphasized that the shinai's path must flow smoothly along the body's centerline, using all three joints — shoulder, elbow, and wrist.</p>
+      <p>Sakamoto Takashi, 7th Dan, said: "Every single suburi has an influence on your match. It is important to treat suburi as a valuable practice method rather than a mere warm-up." He also noted that students who are good at suburi tend to become strong kendoka.</p>
+      <p>Kurita Waichiro, Hanshi 8th Dan and executive director of the All Japan Kendo Federation, shared this: "During winter training at the Tokyo Metropolitan Police Kendo Tokuren, we did about 1,000 suburi a day — 100 to 200 of various types such as shomen, forward-backward men, and sayu-men. 1,000 suburi takes about 40 minutes. When I practice with hobbyist kendoka, I encourage them to gradually increase from 100 to 200. You won't improve just by doing suburi, but by doing it correctly, you will learn something."</p>
+      <p>He also noted that during the COVID-19 pandemic, when partner practice was impossible, his focus on suburi allowed him to return to regular training with almost no decline in ability.</p>
+
+      <h2>What Suburi Actually Does</h2>
+      <p>The All Japan Kendo Federation's official teaching guidelines state the purpose of suburi as: "To learn shinai control and correct hasuji (刃筋, blade angle), to develop the tenouchi (手の内, grip technique) necessary for striking, and to learn the basics of striking using ashisabaki (footwork)."</p>
+      <p>Its value shifts depending on your level. For beginners, it's strength training — building the muscles needed to wield a shinai, especially in the left hand and arm. For more experienced kendoka, McCall describes it like a musician's scales: "It maintains the feeling of connection between your body and the shinai. If something is off, you have the quiet space to find and fix it — something that's harder in the busier dojo environment."</p>
+      <p>He also points out an important limitation: "You simply cannot learn tenouchi solely through suburi. Actually hitting something is far more important. If your dojo time is limited, kirikaeshi (切り返し, continuous alternating strikes) and uchikomi (打ち込み, repetitive striking practice) are far more effective than suburi alone."</p>
+
+      <h2>A Suburi Routine You Can Do at Home</h2>
+      <p>The following is a reference guide based on expert opinions. Adjust according to your own fitness and level.</p>
+      <h3>Beginners</h3>
+      <p>Aim for 15–20 minutes daily. Start with 30 shomen suburi, 30 forward-backward suburi, and 20 sayu-men suburi. Practice in front of a mirror to check your shinai path and posture. Prioritize accuracy over speed.</p>
+      <h3>Dan-level practitioners</h3>
+      <p>Start with 100 shomen suburi and gradually work up to 200. As Kurita Hanshi notes, 100 takes about 5 minutes and 200 takes about 10. For physical conditioning, try 5 sets of 30 haya-suburi (速素振り, fast suburi). Using a heavier suburito (素振り刀, weighted practice sword) builds strength, while a lighter bokken helps refine hasuji.</p>
+      <div class="tip-box">
+        ⚠️ <strong>Always keep in mind</strong><br>
+        Quality over quantity. Every suburi should be performed with the criteria for a valid strike in mind — correct target area, correct part of the shinai, kiai, proper posture, and zanshin. Stop immediately if you feel pain. Repeating poor form only reinforces bad habits.
+      </div>
+
+      <h2>Conclusion</h2>
+      <p>Suburi is, historically speaking, a relatively recent addition to kendo training. It is not a cure-all, and it cannot replace partner practice in the dojo. But on the days you can't make it to practice, it holds real value for maintaining your connection to the shinai and checking your form. As Takano Sasaburo said: "As long as you do suburi and running, your kendo will never deteriorate."</p>
+
+      <div class="sources">
+        <h2>References</h2>
+        <ul>
+          <li>George McCall, <em>Suburi: a brief discussion</em>, kenshi247.net (2018)<br><a href="https://kenshi247.net/blog/2018/08/16/suburi-a-brief-discussion/" target="_blank">https://kenshi247.net/blog/2018/08/16/suburi-a-brief-discussion/</a></li>
+          <li>Kurita Waichiro (Hanshi 8th Dan), <em>The Suburi of a First-class Kenshi</em>, Kendo Jidai International (2024)<br><a href="https://kendojidai.com/2024/01/29/the-suburi-of-a-first-class-kenshi/" target="_blank">https://kendojidai.com/2024/01/29/the-suburi-of-a-first-class-kenshi/</a></li>
+          <li>Sueno Sensei (Hanshi 8th Dan) seminar notes, kendoinfo.net (2012)<br><a href="https://kendoinfo.wordpress.com/2012/07/02/the-importance-of-suburi/" target="_blank">https://kendoinfo.wordpress.com/2012/07/02/the-importance-of-suburi/</a></li>
+          <li>Sakamoto Takashi (7th Dan) seminar notes, Kendo Jidai International (2019)<br><a href="https://kendojidai.com/2019/09/16/the-importance-of-kamae-and-suburi/" target="_blank">https://kendojidai.com/2019/09/16/the-importance-of-kamae-and-suburi/</a></li>
+          <li><em>How many suburi is enough?</em>, kendo-guide.com<br><a href="https://www.kendo-guide.com/how-many-suburi-is-enough.html" target="_blank">https://www.kendo-guide.com/how-many-suburi-is-enough.html</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Kendo Now</div>
+  <div class="footer-text">
+    대회 정보는 각 협회 공식 사이트에서 수집됩니다.<br>
+    오류 제보 및 문의: bytechne39@gmail.com
+  </div>
+</footer>
+
+<script>
+let currentLang = 'ko';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('content-ko').classList.toggle('active', lang === 'ko');
+  document.getElementById('content-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  localStorage.setItem('kendonow-lang', lang);
+}
+
+function initTheme() {
+  const saved = localStorage.getItem('kendo-theme') || 'light';
+  applyTheme(saved);
+}
+function toggleTheme() {
+  applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+}
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('kendo-theme', t);
+  document.getElementById('theme-label').textContent = t === 'light' ? '🌙 다크' : '☀️ 라이트';
+}
+
+initTheme();
+const savedLang = localStorage.getItem('kendonow-lang') || 'ko';
+setLang(savedLang);
+</script>
+</body>
+</html>
