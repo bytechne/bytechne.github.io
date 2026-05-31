@@ -99,11 +99,11 @@ main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
   margin-bottom:6px;
 }
 .card-tag.NEWS      { background:#e8eef8; color:#1a4d99; }
-.card-tag.GUIDE     { background:#e8f4e8; color:#2d7a2d; }
+.card-tag.WORLD     { background:#e8f4e8; color:#2d7a2d; }
 .card-tag.PEOPLE    { background:#f5eef8; color:#6b2d9a; }
 .card-tag.INTERVIEW { background:#fff3e0; color:#b36200; }
 [data-theme="dark"] .card-tag.NEWS      { background:#0a1a3a; color:#6090dd; }
-[data-theme="dark"] .card-tag.GUIDE     { background:#1a3a1a; color:#6dcc6d; }
+[data-theme="dark"] .card-tag.WORLD     { background:#1a3a1a; color:#6dcc6d; }
 [data-theme="dark"] .card-tag.PEOPLE    { background:#2a1a3a; color:#b06de0; }
 [data-theme="dark"] .card-tag.INTERVIEW { background:#3a2a0a; color:#e8a030; }
 
@@ -175,7 +175,7 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
   <div class="cat-row">
     <button class="cat-btn active" data-cat="전체">전체</button>
     <button class="cat-btn" data-cat="NEWS">News</button>
-    <button class="cat-btn" data-cat="GUIDE">Guide</button>
+    <button class="cat-btn" data-cat="WORLD">World</button>
     <button class="cat-btn" data-cat="PEOPLE">People</button>
     <button class="cat-btn" data-cat="INTERVIEW">Interview</button>
   </div>
@@ -200,6 +200,14 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
 // 글 추가 시 이 배열에 항목 하나씩 추가하면 됩니다.
 // img: 이미지 경로 (없으면 "" 로 두면 placeholder 표시)
 const ARTICLES = [
+  {
+    id: 2,
+    tag: "WORLD",
+    title: "집에서 혼자 하는 검도 수련, 후리기는 정말 효과가 있을까",
+    date: "2026.06.01",
+    img: "articles/Article_002_image_01.jpg",
+    url: "articles/002-suburi.html"
+  },
   {
     id: 1,
     tag: "NEWS",
