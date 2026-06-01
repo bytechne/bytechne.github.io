@@ -34,16 +34,20 @@ header { position:sticky; top:0; z-index:100; background:var(--bg2); border-bott
 .header-inner { max-width:1160px; margin:0 auto; padding:0 24px; height:60px; display:flex; align-items:center; justify-content:space-between; }
 .logo { text-decoration:none; }
 .logo-main { font-size:17px; font-weight:800; color:var(--text); }
-.logo-main em { color:var(--red); font-style:normal; }
 nav { display:flex; align-items:center; gap:28px; }
 nav a, nav a:visited { text-decoration:none; font-size:16px; font-weight:600; color:var(--text3); transition:color 0.15s; }
 nav a:hover { color:var(--text); }
 nav a.active, nav a.active:visited { color:var(--text); font-weight:700; border-bottom:2px solid var(--red); padding-bottom:2px; }
+.header-controls { display:flex; align-items:center; gap:10px; }
 .theme-toggle { display:flex; align-items:center; gap:8px; cursor:pointer; padding:6px 12px; border:1.5px solid var(--border2); border-radius:20px; background:var(--bg3); font-size:12px; font-weight:600; color:var(--text2); white-space:nowrap; }
 .toggle-track { width:32px; height:18px; background:var(--border2); border-radius:9px; position:relative; transition:background 0.25s; }
 [data-theme="dark"] .toggle-track { background:var(--red); }
 .toggle-thumb { position:absolute; top:2px; left:2px; width:14px; height:14px; background:#fff; border-radius:50%; transition:transform 0.25s; box-shadow:0 1px 3px rgba(0,0,0,0.3); }
 [data-theme="dark"] .toggle-thumb { transform:translateX(14px); }
+.lang-toggle { display:flex; border:1.5px solid var(--border2); border-radius:20px; overflow:hidden; }
+.lang-btn { padding:5px 12px; font-size:12px; font-weight:700; border:none; background:transparent; color:var(--text3); cursor:pointer; font-family:'Noto Sans KR',sans-serif; transition:all 0.15s; letter-spacing:0.05em; }
+.lang-btn.active { background:var(--border); color:#fff; }
+[data-theme="dark"] .lang-btn.active { background:var(--red); }
 .article-wrap { max-width:720px; margin:0 auto; padding:48px 24px 80px; }
 .back-link { display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--text3); text-decoration:none; margin-bottom:32px; transition:color 0.15s; }
 .back-link:hover { color:var(--text); }
@@ -59,6 +63,9 @@ nav a.active, nav a.active:visited { color:var(--text); font-weight:700; border-
 .article-body .img-caption { text-align:center; font-size:12px; color:var(--text3); margin-bottom:28px; }
 .article-body a { color:var(--red); text-decoration:none; }
 .article-body a:hover { text-decoration:underline; }
+.lang-note { font-size:13px; color:var(--text3); margin-bottom:24px; }
+.lang-ko, .lang-en { display:none; }
+.lang-ko.active, .lang-en.active { display:block; }
 footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
 [data-theme="dark"] footer { border-top-width:1px; }
 .footer-logo { font-size:15px; font-weight:800; color:var(--text3); }
@@ -67,6 +74,7 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
   .header-inner { height:auto; padding:10px 16px; flex-wrap:wrap; gap:8px; }
   nav { gap:16px; flex-wrap:wrap; }
   nav a { font-size:14px; }
+  .header-controls { gap:8px; }
 }
 </style>
 </head>
@@ -79,56 +87,79 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
       <a href="../schedule.html">연간 대회</a>
       <a href="../articles.html" class="active">아티클</a>
     </nav>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
-      <span id="theme-label">🌙 다크</span>
-      <div class="toggle-track"><div class="toggle-thumb"></div></div>
-    </button>
+    <div class="header-controls">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-ko" onclick="setLang('ko')">KO</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
+        <span id="theme-label">🌙 다크</span>
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      </button>
+    </div>
   </div>
 </header>
 
 <div class="article-wrap">
   <a href="../articles.html" class="back-link">← 아티클 목록</a>
 
-  <div class="article-header">
-    <div class="article-tag">NEWS</div>
-    <h1 class="article-title">검도나우를 소개합니다.</h1>
-    <div class="article-meta">
-      <span>2026.05.25</span>
-      <span>검도나우</span>
+  <!-- 한국어 -->
+  <div class="lang-ko active" id="content-ko">
+    <div class="article-header">
+      <div class="article-tag">NEWS</div>
+      <h1 class="article-title">검도나우를 소개합니다.</h1>
+      <div class="article-meta">
+        <span>2026.05.25</span>
+        <span>검도나우</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <p class="lang-note">🌐 English version available — use the <strong>KO/EN</strong> button in the top right corner.</p>
+      <img src="Article_001_image_01.jpg" alt="검도나우 대표 이미지">
+      <h2>더 편리한 검도를 위하여</h2>
+      <p>안녕하세요. 처음 인사드립니다. 검도나우입니다.</p>
+      <p>아직 짧은 검력에 일천한 실력이지만 검도를 사랑하는 마음에 부족한 웹사이트를 만들었습니다.</p>
+      <p>검도를 하며 가장 불편했던 부분 중 하나는 생활체육대회 일정을 통합 관리하는 페이지가 없어 각 지역별 검도회나 도장을 통해서 대회 일정을 찾아야 한다는 점이었습니다. 이 불편함에 대해 공감하는 다른 동호인분들이 생각보다 많다는 점을 알게 되었습니다.</p>
+      <p>그래서 조금이라도 더 편리한 검도 생활을 위해 작은 발걸음을 떼어 봅니다.</p>
+      <h2>검도나우가 하는 일</h2>
+      <p>검도나우는 아주 심플한 웹사이트입니다.</p>
+      <p>각 월별 대회 일정을 공유하고, 연간 대회 일정을 확인할 수 있습니다.</p>
+      <p>그리고 운영자가 가끔씩 시시콜콜한 글들을 아티클 페이지에 업로드할 생각입니다. 앞서 언급했듯 운영자의 검력이 일천하여 거진 국내외 소식이나 공부를 위해 찾아본 별로 중요할 것 없는 내용이 될 듯 하지만, 본디 글 쓰는 것을 좋아하는지라 제 욕심에 만든 페이지입니다.</p>
+      <p>언젠가 기회가 된다면 여러 검도선수, 동호인 여러분들을 인터뷰하고 좋은 인사이트를 공유할 수 있으면 좋겠다는 작은 소망이 있습니다.</p>
+      <p>추후에 좋은 아이디어나 계획이 생기면 추가해 보겠으나 기본적으로 검도나우의 용도는 대회 일정 조회입니다.</p>
+      <img src="Article_001_image_02.jpg" alt="검도나우 캘리그라피">
+      <p>기타 문의나 대회 일정 공유는 <a href="mailto:bytechne39@gmail.com">bytechne39@gmail.com</a>으로 부탁드립니다.</p>
     </div>
   </div>
 
-  <div class="article-body">
-
-    <img src="Article_001_image_01.jpg" alt="검도나우 대표 이미지">
-
-    <h2>더 편리한 검도를 위하여</h2>
-
-    <p>안녕하세요. 처음 인사드립니다. 검도나우입니다.</p>
-
-    <p>아직 짧은 검력에 일천한 실력이지만 검도를 사랑하는 마음에 부족한 웹사이트를 만들었습니다.</p>
-
-    <p>검도를 하며 가장 불편했던 부분 중 하나는 생활 체육대회 일정을 통합 관리하는 페이지가 없어 각 지역별 검도회나 도장을 통해서 대회 일정을 찾아야 한다는 점이었습니다. 이 불편함에 대해 공감하는 다른 동호인분들이 생각보다 많다는 점을 알게 되었습니다.</p>
-
-    <p>그래서 조금이라도 더 편리한 검도 생활을 위해 작은 발걸음을 떼어 봅니다.</p>
-
-    <h2>검도나우가 하는 일</h2>
-
-    <p>검도나우는 아주 심플한 웹사이트입니다.</p>
-
-    <p>각 월별 대회 일정을 공유하고, 연간 대회 일정을 확인할 수 있습니다.</p>
-
-    <p>그리고 운영자가 가끔씩 시시콜콜한 글들을 아티클 페이지에 업로드할 생각입니다. 앞서 언급했듯 운영자의 검력이 일천하여 거진 국내외 소식이나 공부를 위해 찾아본 별로 중요할 것 없는 내용이 될 듯 하지만, 본디 글 쓰는 것을 좋아하는지라 제 욕심에 만든 페이지입니다.</p>
-    
-    <p>언젠가 기회가 된다면 여러 검도선수, 동호인 여러분들을 인터뷰하고 좋은 인사이트를 공유할 수 있으면 좋겠다는 작은 소망이 있습니다.</p>
-
-    <p>추후에 좋은 아이디어나 계획이 생기면 추가해 보겠으나 기본적으로 검도나우의 용도는 대회 일정 조회입니다.</p>
-
-    <img src="Article_001_image_02.jpg" alt="검도나우 이미지">
-
-    <p>기타 문의나 대회 일정 공유는 <a href="mailto:bytechne39@gmail.com">bytechne39@gmail.com</a>으로 부탁드립니다.</p>
-
+  <!-- 영어 -->
+  <div class="lang-en" id="content-en">
+    <div class="article-header">
+      <div class="article-tag">NEWS</div>
+      <h1 class="article-title">Introducing KendoNow.</h1>
+      <div class="article-meta">
+        <span>2026.05.25</span>
+        <span>KendoNow</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <img src="Article_001_image_01.jpg" alt="KendoNow main image">
+      <h2>A Small Step Toward a More Convenient Kendo Life</h2>
+      <p>Hello. Nice to meet you. This is KendoNow.</p>
+      <p>My kendo experience is still short and my skills are far from impressive — but my love for kendo led me to build this modest website.</p>
+      <p>One of the things I found most frustrating as a kendo hobbyist was the lack of any central place to find competition schedules. You had to check individual regional associations or ask around at your dojo. When I discovered that many other practitioners felt the same frustration, I decided to do something about it.</p>
+      <p>This site is my small step toward making kendo life a little more convenient.</p>
+      <h2>What KendoNow Does</h2>
+      <p>KendoNow is a simple website.</p>
+      <p>It brings together monthly competition schedules and provides a full annual calendar of kendo events in one place.</p>
+      <p>I also plan to post occasional articles on the Articles page — thoughts, notes, and things I've looked up out of curiosity. Given my limited experience, most of it will probably be summaries of news or things I've researched while studying kendo myself. But I enjoy writing, so this page exists largely to satisfy my own interests.</p>
+      <p>One day, if the opportunity arises, I'd love to interview kendo players and fellow hobbyists and share their insights here. That's a small dream of mine.</p>
+      <p>I may add new features and ideas over time, but at its core, KendoNow is a competition schedule tool.</p>
+      <img src="Article_001_image_02.jpg" alt="KendoNow calligraphy">
+      <p>For inquiries or to share competition information, please reach out at <a href="mailto:bytechne39@gmail.com">bytechne39@gmail.com</a>.</p>
+    </div>
   </div>
+
 </div>
 
 <footer>
@@ -140,6 +171,15 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
 </footer>
 
 <script>
+let currentLang = 'ko';
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('content-ko').classList.toggle('active', lang === 'ko');
+  document.getElementById('content-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  localStorage.setItem('kendonow-lang', lang);
+}
 function initTheme() {
   const saved = localStorage.getItem('kendo-theme') || 'light';
   applyTheme(saved);
@@ -153,6 +193,8 @@ function applyTheme(t) {
   document.getElementById('theme-label').textContent = t === 'light' ? '🌙 다크' : '☀️ 라이트';
 }
 initTheme();
+const savedLang = localStorage.getItem('kendonow-lang') || 'ko';
+setLang(savedLang);
 </script>
 </body>
 </html>
