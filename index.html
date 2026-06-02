@@ -282,7 +282,7 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
     </div>
   </section>
 
-  <section id="month-events">
+  <section id="month-events" style="display:none;">
     <div class="section-header" style="margin-top:32px;">
       <h2 class="section-title" id="month-title">이번달 대회</h2>
       <a href="#" class="section-more">전체 보기 →</a>
@@ -519,7 +519,7 @@ document.getElementById('view-cal').addEventListener('click',()=>{
   document.getElementById('view-list').classList.remove('active');
   document.getElementById('calendar-view').style.display='block';
   document.getElementById('list-view').style.display='none';
-  document.getElementById('month-events').style.display='block';
+  document.getElementById('month-events').style.display='none';
 });
 
 document.getElementById('view-list').addEventListener('click',()=>{
@@ -528,11 +528,11 @@ document.getElementById('view-list').addEventListener('click',()=>{
   document.getElementById('view-cal').classList.remove('active');
   document.getElementById('calendar-view').style.display='none';
   document.getElementById('list-view').style.display='block';
-  document.getElementById('month-events').style.display='none';
   renderListView();
 });
 
 initTheme();
+document.getElementById('month-events').style.display='none';
 
 fetch('manual_events.json?v=' + Date.now())
   .then(r => r.json())
