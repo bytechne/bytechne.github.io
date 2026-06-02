@@ -77,8 +77,9 @@ main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
 .filter-btn:hover { border-color:var(--text3); color:var(--text2); }
 .filter-btn.active { background:var(--filter-on-bg); border-color:var(--filter-on-bg); color:var(--filter-on-text); }
 .view-toggle { display:flex; border:1.5px solid var(--border2); border-radius:4px; overflow:hidden; }
-.view-btn { padding:4px 12px; font-size:11px; font-weight:600; border:none; background:transparent; color:var(--text3); cursor:pointer; font-family:'Noto Sans KR',sans-serif; transition:all 0.15s; }
-.view-btn.active { background:var(--bg3); color:var(--text); }
+.view-btn { padding:5px 14px; font-size:12px; font-weight:700; border:none; background:transparent; color:var(--text3); cursor:pointer; font-family:'Noto Sans KR',sans-serif; transition:all 0.15s; }
+.view-btn.active { background:var(--border); color:#fff; }
+[data-theme="dark"] .view-btn.active { background:var(--red); color:#fff; }
 
 .calendar-box { border:1.5px solid var(--border2); border-radius:4px; overflow:hidden; margin-top:12px; transition:border-color 0.25s; }
 .cal-day-names { display:grid; grid-template-columns:repeat(7,1fr); background:var(--bg3); border-bottom:1.5px solid var(--border2); }
@@ -249,10 +250,7 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
           <button class="filter-btn" data-filter="생체">생체</button>
           <button class="filter-btn" data-filter="학생">학생</button>
         </div>
-        <div class="view-toggle">
-          <button class="view-btn active" id="view-cal">캘린더</button>
-          <button class="view-btn" id="view-list">리스트</button>
-        </div>
+
       </div>
     </div>
 
@@ -262,6 +260,10 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
         <span class="cal-month-label" id="cal-month-label"></span>
         <button class="cal-nav-btn" onclick="changeMonth(1)">&#8250;</button>
         <button class="filter-btn" onclick="goToToday()">오늘</button>
+        <div class="view-toggle" style="margin-left:8px;">
+          <button class="view-btn active" id="view-cal">캘린더</button>
+          <button class="view-btn" id="view-list">리스트</button>
+        </div>
       </div>
     </div>
 
@@ -493,10 +495,12 @@ function closeModal(ev){
 }
 
 function changeMonth(dir){
+  const wasListView = curView === 'list';
   curMonth+=dir;
   if(curMonth<0){curMonth=11;curYear--;}
   if(curMonth>11){curMonth=0;curYear++;}
   renderCalendar();
+  if(wasListView) renderListView();
 }
 
 function goToToday(){
