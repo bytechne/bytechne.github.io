@@ -10,7 +10,7 @@
       "location": "검도최고",
       "type": "생체",
       "open": false,
-      "source": "https://bytechne.github.io/",
+      "source": "",
       "source_site": "manual",
       "note": "테스트일정",
       "updated": "2026-05-24"
@@ -66,6 +66,19 @@
       "source_site": "manual",
       "note": "신청마감 6월12일",
       "updated": "2026-05-25"
+    },
+    {
+      "id": "manual_005",
+      "name": "동대문구오픈검도대회",
+      "date": "2026-09-19",
+      "endDate": "2026-09-19",
+      "location": "동대문구체육관",
+      "type": "생체",
+      "open": true,
+      "source": "http://naver.me/FjmmN33s",
+      "source_site": "manual",
+      "note": "단별 오픈, 신청마감 8월8일, 검도V카페 대회소식",
+      "updated": "2026-06-02"
     },
     {
       "id": "2eeaf987b0",
