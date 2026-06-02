@@ -425,8 +425,19 @@ function renderMonthList(){
 }
 
 function renderListView(){
-  const filtered=getFiltered().sort((a,b)=>new Date(a.date)-new Date(b.date));
-  document.getElementById('list-container').innerHTML=filtered.map(e=>buildItem(e)).join('');
+  const filtered=getFiltered()
+    .filter(e=>{
+      if(!e.date) return false;
+      const d=new Date(e.date);
+      return d.getFullYear()===curYear && d.getMonth()===curMonth;
+    })
+    .sort((a,b)=>new Date(a.date)-new Date(b.date));
+  const container=document.getElementById('list-container');
+  if(!filtered.length){
+    container.innerHTML=`<div style="text-align:center;padding:48px 24px;color:var(--text3);font-size:14px;">${curMonth+1}월에 등록된 대회가 없습니다.</div>`;
+    return;
+  }
+  container.innerHTML=filtered.map(e=>buildItem(e)).join('');
 }
 
 function buildItem(e){
