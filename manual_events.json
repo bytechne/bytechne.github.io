@@ -94,6 +94,19 @@
       "updated": "2026-06-03"
     },
     {
+      "id": "manual_007",
+      "name": "세종시장기송산검도대회",
+      "date": "2026-07-19",
+      "endDate": "2026-07-20",
+      "location": "세종시민체육관",
+      "type": "생체",
+      "open": true,
+      "source": "http://www.sejongkumdo.org/bbs/board.php?bo_table=notice&wr_id=54",
+      "source_site": "manual",
+      "note": "전국 오픈, 신청마감 7월4",
+      "updated": "2026-06-03"
+    },
+    {
       "id": "2eeaf987b0",
       "name": "동계 전국실업검도대회",
       "date": "2026-02-06",
