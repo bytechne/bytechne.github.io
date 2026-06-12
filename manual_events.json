@@ -103,8 +103,21 @@
       "open": true,
       "source": "http://www.sejongkumdo.org/bbs/board.php?bo_table=notice&wr_id=54",
       "source_site": "manual",
-      "note": "전국 오픈, 신청마감 7월4",
-      "updated": "2026-06-03"
+      "note": "전국 오픈, 신청마감 7월4일",
+      "updated": "2026-06-12"
+    },
+    {
+      "id": "manual_008",
+      "name": "경상북도지사기검도대회",
+      "date": "2026-07-11",
+      "endDate": "2026-07-12",
+      "location": "문경실내체육",
+      "type": "생체",
+      "open": false,
+      "source": "http://www.kbkumdo.org/plan/?uid=563&mod=document&pageid=1",
+      "source_site": "manual",
+      "note": "경북검도회소속한정, 신청마감 6월18일,유치부있음",
+      "updated": "2026-06-12"
     },
     {
       "id": "2eeaf987b0",
