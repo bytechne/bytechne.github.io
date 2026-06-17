@@ -371,13 +371,13 @@
       "name": "국제오픈 한국사회인검도대회",
       "date": "2026-07-11",
       "endDate": "2026-07-12",
-      "location": "서울, 올림픽핸드볼경기장",
+      "location": "가평, 한석봉체육관",
       "type": "생체",
       "open": true,
       "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1902&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
-      "note": "제39회, 국제오픈",
-      "updated": "2026-05-24"
+      "note": "제39회, 국제오픈, 개최지 가평으로 변경",
+      "updated": "2026-06-18"
     },
     {
       "id": "3ebe1d3dac",
