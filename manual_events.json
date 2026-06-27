@@ -355,7 +355,7 @@
     },
     {
       "id": "e3e6b270a7",
-      "name": "대한검도회장기 전국실업검도대회",
+      "name": "대한검도회장기 전국실업검도대회(잠정연기)",
       "date": "2026-07-10",
       "endDate": "2026-07-13",
       "location": "",
@@ -363,8 +363,8 @@
       "open": false,
       "source": "https://www.kumdo.org/bbs/board.php?bo_table=schedule_guide&wr_id=1901&shsubid=&page=1&year=&month=&sca=%EB%8C%80%ED%9A%8C",
       "source_site": "kumdo_org",
-      "note": "제4회",
-      "updated": "2026-05-24"
+      "note": "잠정연기, 제4회",
+      "updated": "2026-06-28"
     },
     {
       "id": "dbfa81102f",
