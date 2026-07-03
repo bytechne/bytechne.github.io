@@ -123,6 +123,11 @@ main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
 .event-name { font-size:14px; font-weight:700; color:var(--text); }
 .event-meta { font-size:12px; color:var(--text3); margin-top:3px; display:flex; gap:12px; }
 .event-tag-wrap { padding:0 16px; display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
+
+.notice-bar { margin-bottom:16px; display:flex; flex-direction:column; gap:6px; }
+.notice-item { display:flex; align-items:center; gap:10px; padding:9px 14px; background:var(--bg3); border-left:3px solid var(--red); border-radius:0 4px 4px 0; font-size:13px; color:var(--text2); line-height:1.5; }
+.notice-item .notice-dot { width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; }
+
 .ev-tag { font-size:10px; padding:2px 9px; border-radius:2px; font-weight:700; white-space:nowrap; background:var(--tag-bg); color:var(--tag-text); }
 .ev-tag.학생 { background:#27ae60; color:#fff; }
 .ev-tag.실업 { background:#2a6aba; color:#fff; }
@@ -242,6 +247,10 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
   </section>
 
   <div class="ad-banner"><span class="ad-label">ADVERTISEMENT</span></div>
+
+  <section id="notices">
+    <div class="notice-bar" id="notice-bar"></div>
+  </section>
 
   <section id="calendar">
     <div class="section-header">
@@ -540,6 +549,25 @@ document.getElementById('view-list').addEventListener('click',()=>{
   document.getElementById('list-view').style.display='block';
   renderListView();
 });
+
+// ============================
+// 공지사항 (최대 3개)
+// 내용 없으면 '' 로 비워두세요
+// ============================
+const NOTICES = [
+  '🆕 합동연무 일정을 확인할 수 있는 연무 탭이 추가되었습니다.',  // 공지 1
+  '',  // 공지 2
+  '',  // 공지 3
+];
+
+(function renderNotices() {
+  const bar = document.getElementById('notice-bar');
+  const items = NOTICES.slice(0, 3).filter(n => n.trim() !== '');
+  if (!items.length) { bar.style.display = 'none'; return; }
+  bar.innerHTML = items.map(n =>
+    `<div class="notice-item"><span class="notice-dot"></span><span>${n}</span></div>`
+  ).join('');
+})();
 
 initTheme();
 document.getElementById('month-events').style.display='none';
