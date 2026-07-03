@@ -555,19 +555,22 @@ document.getElementById('view-list').addEventListener('click',()=>{
 // 내용 없으면 '' 로 비워두세요
 // ============================
 const NOTICES = [
-  '🆕 합동연무 일정을 확인할 수 있는 연무 탭이 추가되었습니다.',  // 공지 1
+  '합동연무 일정을 확인할 수 있는 연무 탭이 추가되었습니다. 26.07.04',  // 공지 1
   '',  // 공지 2
   '',  // 공지 3
 ];
 
-(function renderNotices() {
+function renderNotices() {
   const bar = document.getElementById('notice-bar');
-  const items = NOTICES.slice(0, 3).filter(n => n.trim() !== '');
+  if (!bar) return;
+  const items = NOTICES.slice(0, 3).filter(n => n && n.trim() !== '');
   if (!items.length) { bar.style.display = 'none'; return; }
+  bar.style.display = 'flex';
   bar.innerHTML = items.map(n =>
-    `<div class="notice-item"><span class="notice-dot"></span><span>${n}</span></div>`
+    '<div class="notice-item"><span class="notice-dot"></span><span>' + n + '</span></div>'
   ).join('');
-})();
+}
+renderNotices();
 
 initTheme();
 document.getElementById('month-events').style.display='none';
