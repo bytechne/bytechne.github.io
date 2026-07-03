@@ -103,10 +103,12 @@ main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
 .event-label.생체    { background:#fee2e2; color:#b91c1c; }
 .event-label.실업    { background:#dbeafe; color:#1d4ed8; }
 .event-label.학생    { background:#dcfce7; color:#15803d; }
+.event-label.연무    { background:#ede9fe; color:#5b21b6; }
 [data-theme="dark"] .event-label         { background:#334155; color:#cbd5e1; }
 [data-theme="dark"] .event-label.생체    { background:#7f1d1d; color:#fca5a5; }
 [data-theme="dark"] .event-label.실업    { background:#1e3a5f; color:#93c5fd; }
 [data-theme="dark"] .event-label.학생    { background:#14532d; color:#86efac; }
+[data-theme="dark"] .event-label.연무    { background:#2e1065; color:#c4b5fd; }
 
 .event-list { margin-top:12px; border:1.5px solid var(--border2); border-radius:4px; overflow:hidden; transition:border-color 0.25s; }
 .event-item { display:grid; grid-template-columns:68px 1fr auto; align-items:center; border-bottom:1px solid var(--border3); text-decoration:none; color:inherit; transition:background 0.1s; cursor:pointer; }
@@ -125,6 +127,7 @@ main { max-width:1160px; margin:0 auto; padding:0 24px 80px; }
 .ev-tag.학생 { background:#27ae60; color:#fff; }
 .ev-tag.실업 { background:#2a6aba; color:#fff; }
 .ev-tag.오픈 { background:transparent; color:var(--red); border:1.5px solid var(--red); }
+.ev-tag.연무 { background:#7c3aed; color:#fff; }
 
 .yearly-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1.5px solid var(--border2); border-radius:4px; overflow:hidden; margin-top:16px; transition:border-color 0.25s; }
 .month-block { padding:16px; border-right:1px solid var(--border3); border-bottom:1px solid var(--border3); transition:background 0.1s; }
@@ -249,6 +252,7 @@ footer { border-top:2px solid var(--border); padding:28px 24px; max-width:1160px
           <button class="filter-btn" data-filter="실업">실업</button>
           <button class="filter-btn" data-filter="생체">생체</button>
           <button class="filter-btn" data-filter="학생">학생</button>
+          <button class="filter-btn" data-filter="연무">연무</button>
         </div>
 
       </div>
