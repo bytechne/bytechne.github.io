@@ -120,6 +120,19 @@
       "updated": "2026-06-12"
     },
     {
+      "id": "manual_009",
+      "name": "가평특별군 전국검도페스티벌",
+      "date": "2026-08-15",
+      "endDate": "2026-08-17",
+      "location": "한석봉체육관",
+      "type": "생체,오픈",
+      "open": true,
+      "source": "http://www.gpkumdo.com/dmboard/list.php?board=notice&mode=view&idx=240&search=&searchstring=&page=1",
+      "source_site": "manual",
+      "note": "리그방식, 오픈대회, 15일 대학, 16일 성인, 17일 학생",
+      "updated": "2026-06-12"
+    },
+    {
       "id": "2eeaf987b0",
       "name": "동계 전국실업검도대회",
       "date": "2026-02-06",
