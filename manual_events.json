@@ -125,12 +125,51 @@
       "date": "2026-08-15",
       "endDate": "2026-08-17",
       "location": "한석봉체육관",
-      "type": "생체,오픈",
+      "type": "생체",
       "open": true,
       "source": "http://www.gpkumdo.com/dmboard/list.php?board=notice&mode=view&idx=240&search=&searchstring=&page=1",
       "source_site": "manual",
       "note": "리그방식, 오픈대회, 15일 대학, 16일 성인, 17일 학생",
-      "updated": "2026-06-12"
+      "updated": "2026-07-04"
+    },
+    {
+      "id": "manual_010",
+      "name": "하남시검도회 합동연무",
+      "date": "2026-07-04",
+      "endDate": "2026-07-05",
+      "location": "미사검도관",
+      "type": "연무",
+      "open": false,
+      "source": "https://cafe.naver.com/kumdov?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D14201825%2526articleid%3D83285%2526referrerAllArticles%3Dtrue",
+      "source_site": "manual",
+      "note": "토11시, 일15시,주차가능",
+      "updated": "2026-07-04"
+    },
+    {
+      "id": "manual_011",
+      "name": "하남시검도회 합동연무",
+      "date": "2026-07-11",
+      "endDate": "2026-07-12",
+      "location": "미사검도관",
+      "type": "연무",
+      "open": false,
+      "source": "https://cafe.naver.com/kumdov?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D14201825%2526articleid%3D83285%2526referrerAllArticles%3Dtrue",
+      "source_site": "manual",
+      "note": "토11시, 일15시,주차가능",
+      "updated": "2026-07-04"
+    },
+    {
+      "id": "manual_012",
+      "name": "하남시검도회 합동연무",
+      "date": "2026-07-25",
+      "endDate": "2026-07-26",
+      "location": "미사검도관",
+      "type": "연무",
+      "open": false,
+      "source": "https://cafe.naver.com/kumdov?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D14201825%2526articleid%3D83285%2526referrerAllArticles%3Dtrue",
+      "source_site": "manual",
+      "note": "토11시, 일15시,주차가능",
+      "updated": "2026-07-04"
     },
     {
       "id": "2eeaf987b0",
