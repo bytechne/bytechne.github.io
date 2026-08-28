@@ -243,7 +243,7 @@
       "endDate": "2026-09-20",
       "location": "광진구민체육관",
       "type": "생체",
-      "open": flase,
+      "open": false,
       "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/83748?boardtype=L&menuid=17&referrerAllArticles=false",
       "source_site": "manual",
       "note": "광진구 소재 검도장 및 센터 회원 한정.",
