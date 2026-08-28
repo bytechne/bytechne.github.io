@@ -223,6 +223,32 @@
       "note": "상세일정 나오지않음.(7/17기준)",
       "updated": "2026-07-17"
     },
+      {
+      "id": "manual_017",
+      "name": "경북도민생활체육대축전",
+      "date": "2026-09-19",
+      "endDate": "2026-09-20",
+      "location": "예천국민체육센터 2층",
+      "type": "생체",
+      "open": false,
+      "source": "http://www.kbkumdo.org/plan/?uid=596&mod=document&pageid=1",
+      "source_site": "manual",
+      "note": "대한검도회 및 경북검도회 공인도장 및 생활체육센터에서 수련하고 있으며,시·군검도회에서 선발된 자",
+      "updated": "2026-08-28"
+    },  
+    {
+      "id": "manual_018",
+      "name": "서울광진구회장기검도대",
+      "date": "2026-09-20",
+      "endDate": "2026-09-20",
+      "location": "광진구민체육관",
+      "type": "생체",
+      "open": flase,
+      "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/83748?boardtype=L&menuid=17&referrerAllArticles=false",
+      "source_site": "manual",
+      "note": "광진구 소재 검도장 및 센터 회원 한정.",
+      "updated": "2026-08-28"
+    },
     {
       "id": "2eeaf987b0",
       "name": "동계 전국실업검도대회",
