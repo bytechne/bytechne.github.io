@@ -249,6 +249,19 @@
       "note": "광진구 소재 검도장 및 센터 회원 한정.",
       "updated": "2026-08-28"
     },
+      {
+      "id": "manual_019",
+      "name": "광주광역시체육회장기",
+      "date": "2026-08-29",
+      "endDate": "2026-08-30",
+      "location": "광주서석중고등학교 체육관",
+      "type": "생체",
+      "open": true,
+      "source": "http://www.gwangjukumdo.org/bbs/board.php?bo_table=notice&wr_id=192",
+      "source_site": "manual",
+      "note": "유당 최상옥선생 추모기념",
+      "updated": "2026-08-28"
+    },   
     {
       "id": "2eeaf987b0",
       "name": "동계 전국실업검도대회",
