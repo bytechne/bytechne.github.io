@@ -262,21 +262,8 @@
       "note": "유당 최상옥선생 추모기념",
       "updated": "2026-08-28"
     },   
-      {
-      "id": "manual_020",
-      "name": "하남시검도회합동연",
-      "date": "2026-09-12",
-      "endDate": "2026-09-12",
-      "location": "미사검도관",
-      "type": "연무",
-      "open": false,
-      "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/83822?boardtype=L&menuid=69&referrerAllArticles=false",
-      "source_site": "manual",
-      "note": "페이지내 일정 참고",
-      "updated": "2026-09-05"
-    },
      {
-      "id": "manual_021",
+      "id": "manual_020",
       "name": "하남시검도회합동연무",
       "date": "2026-09-12",
       "endDate": "2026-09-12",
@@ -289,7 +276,7 @@
       "updated": "2026-09-05"
     },
       {
-      "id": "manual_022",
+      "id": "manual_021",
       "name": "하남시검도회합동연무",
       "date": "2026-09-13",
       "endDate": "2026-09-13",
@@ -302,7 +289,7 @@
       "updated": "2026-09-05"
     },
       {
-      "id": "manual_023",
+      "id": "manual_022",
       "name": "하남시검도회합동연무",
       "date": "2026-09-19",
       "endDate": "2026-09-19",
@@ -315,7 +302,7 @@
       "updated": "2026-09-05"
     },
       {
-      "id": "manual_024",
+      "id": "manual_023",
       "name": "하남시검도회합동연무",
       "date": "2026-09-20",
       "endDate": "2026-09-20",
@@ -328,7 +315,7 @@
       "updated": "2026-09-05"
     },
     {
-      "id": "manual_025",
+      "id": "manual_024",
       "name": "이도연구회 세미나",
       "date": "2026-09-06",
       "endDate": "2026-09-06",
@@ -341,7 +328,7 @@
       "updated": "2026-09-05"
     },
       {
-      "id": "manual_026",
+      "id": "manual_025",
       "name": "이도연구회 세미나",
       "date": "2026-09-13",
       "endDate": "2026-09-13",
@@ -354,7 +341,7 @@
       "updated": "2026-09-05"
     },
       {
-      "id": "manual_027",
+      "id": "manual_026",
       "name": "이도연구회 세미나",
       "date": "2026-09-20",
       "endDate": "2026-09-20",
@@ -367,7 +354,7 @@
       "updated": "2026-09-05"
     },
       {
-      "id": "manual_028",
+      "id": "manual_027",
       "name": "이도연구회 세미나",
       "date": "2026-09-27",
       "endDate": "2026-09-27",
