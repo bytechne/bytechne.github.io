@@ -328,6 +328,58 @@
       "updated": "2026-09-05"
     },
     {
+      "id": "manual_025",
+      "name": "이도연구회 세미나",
+      "date": "2026-09-06",
+      "endDate": "2026-09-06",
+      "location": "광명국민체육센터 검도장",
+      "type": "연무",
+      "open": false,
+      "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/83267?boardtype=L&menuid=69&referrerAllArticles=false",
+      "source_site": "manual",
+      "note": "12시-14시",
+      "updated": "2026-09-05"
+    },
+      {
+      "id": "manual_026",
+      "name": "이도연구회 세미나",
+      "date": "2026-09-13",
+      "endDate": "2026-09-13",
+      "location": "광명국민체육센터 검도장",
+      "type": "연무",
+      "open": false,
+      "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/83267?boardtype=L&menuid=69&referrerAllArticles=false",
+      "source_site": "manual",
+      "note": "12시-14시, 자유수련",
+      "updated": "2026-09-05"
+    },
+      {
+      "id": "manual_027",
+      "name": "이도연구회 세미나",
+      "date": "2026-09-20",
+      "endDate": "2026-09-20",
+      "location": "광명국민체육센터 검도장",
+      "type": "연무",
+      "open": false,
+      "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/83267?boardtype=L&menuid=69&referrerAllArticles=false",
+      "source_site": "manual",
+      "note": "12시-14시",
+      "updated": "2026-09-05"
+    },
+      {
+      "id": "manual_028",
+      "name": "이도연구회 세미나",
+      "date": "2026-09-27",
+      "endDate": "2026-09-27",
+      "location": "광명국민체육센터 검도장",
+      "type": "연무",
+      "open": false,
+      "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/83267?boardtype=L&menuid=69&referrerAllArticles=false",
+      "source_site": "manual",
+      "note": "12시-14시, 자유수련",
+      "updated": "2026-09-05"
+    },
+    {
       "id": "2eeaf987b0",
       "name": "동계 전국실업검도대회",
       "date": "2026-02-06",
