@@ -366,6 +366,32 @@
       "note": "12시-14시, 자유수련",
       "updated": "2026-09-05"
     },
+          {
+      "id": "manual_028",
+      "name": "동호인한마당대회",
+      "date": "2026-10-03",
+      "endDate": "2026-10-03",
+      "location": "영천생활체육관",
+      "type": "생체",
+      "open": true,
+      "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/83870?boardtype=L&menuid=69&referrerAllArticles=false",
+      "source_site": "manual",
+      "note": "추계전국실업검도대회-동호인한마당, 한국실업검도연맹 홈페이지에서 양식 다운로드.",
+      "updated": "2026-09-12"
+    },
+        {
+      "id": "manual_029",
+      "name": "제2회 니텐이치류 초청 이도강습회",
+      "date": "2026-10-11",
+      "endDate": "2026-10-11",
+      "location": "수도권 소재지 체육관(미정)",
+      "type": "연무",
+      "open": false,
+      "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/83852?boardtype=L&menuid=69&referrerAllArticles=false",
+      "source_site": "manual",
+      "note": "선착순 40명, 참가비 5만원.",
+      "updated": "2026-09-12"
+    },
     {
       "id": "2eeaf987b0",
       "name": "동계 전국실업검도대회",
