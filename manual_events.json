@@ -392,6 +392,45 @@
       "note": "선착순 40명, 참가비 5만원.",
       "updated": "2026-09-12"
     },
+        {
+      "id": "manual_030",
+      "name": "제23회 추계 전국실업검도대회",
+      "date": "2026-10-02",
+      "endDate": "2026-10-05",
+      "location": "경북 영천",
+      "type": "실업",
+      "open": false,
+      "source": "http://www.businesskumdo.kr/board.php?categoryNo=47&logNo=1916",
+      "source_site": "manual",
+      "note": "",
+      "updated": "2026-09-14"
+    },
+        {
+      "id": "manual_031",
+      "name": "제6회 대한검도회장기 전국대학검도대회",
+      "date": "2026-10-03",
+      "endDate": "2026-10-05",
+      "location": "전북, 고창군 군립체육관",
+      "type": "학생",
+      "open": false,
+      "source": "http://www.businesskumdo.kr/board.php?categoryNo=47&logNo=1918",
+      "source_site": "manual",
+      "note": "대학 대회",
+      "updated": "2026-09-14"
+    },
+        {
+      "id": "manual_032",
+      "name": "연무검도관 오픈합동연습",
+      "date": "2026-09-26",
+      "endDate": "2026-09-26",
+      "location": "연무검도관. 인천시 연무구.",
+      "type": "연무",
+      "open": false,
+      "source": "https://cafe.naver.com/kumdov?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D14201825%2526articleid%3D83894%2526referrerAllArticles%3Dfalse",
+      "source_site": "manual",
+      "note": "17시-18시30, 사전신청 필요.",
+      "updated": "2026-09-14"
+    },
     {
       "id": "2eeaf987b0",
       "name": "동계 전국실업검도대회",
