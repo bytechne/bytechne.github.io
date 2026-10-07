@@ -431,7 +431,7 @@
       "note": "17시-18시30, 사전신청 필요.",
       "updated": "2026-09-14"
     },
-            {
+      {
       "id": "manual_033",
       "name": "제1회 한국사회인 단별검도대회",
       "date": "2026-12-20",
@@ -442,6 +442,19 @@
       "source": "http://www.kumdos.org/bbs/board.php?bo_table=notice&wr_id=15741",
       "source_site": "manual",
       "note": "10월 20일까지 접수",
+      "updated": "2026-10-07"
+    },
+       {
+      "id": "manual_034",
+      "name": "부천시장기",
+      "date": "2026-10-24",
+      "endDate": "2026-10-24",
+      "location": "송내사회체육",
+      "type": "생체",
+      "open": true,
+      "source": "https://cafe.naver.com/f-e/cafes/14201825/articles/84013?boardtype=L&menuid=17&referrerAllArticles=false",
+      "source_site": "manual",
+      "note": "10월 8일까지 접수.",
       "updated": "2026-10-07"
     },
     {
