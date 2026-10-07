@@ -431,6 +431,19 @@
       "note": "17시-18시30, 사전신청 필요.",
       "updated": "2026-09-14"
     },
+            {
+      "id": "manual_033",
+      "name": "제1회 한국사회인 단별검도대회",
+      "date": "2026-12-20",
+      "endDate": "2026-12-20",
+      "location": "서울과학기술대학교 체육관",
+      "type": "생체",
+      "open": true,
+      "source": "http://www.kumdos.org/bbs/board.php?bo_table=notice&wr_id=15741",
+      "source_site": "manual",
+      "note": "10월 20일까지 접수",
+      "updated": "2026-10-07"
+    },
     {
       "id": "2eeaf987b0",
       "name": "동계 전국실업검도대회",
